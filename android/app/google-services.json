@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "306036542465",
+    "project_id": "mishi-mimi",
+    "storage_bucket": "mishi-mimi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306036542465:android:f2c2d79235abedcf364400",
+        "android_client_info": {
+          "package_name": "com.proyecto.mishimimi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3FmFPvVnAiwNzx43iEPf3lhQK-vSaQ9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
