@@ -41,10 +41,25 @@ class OrderRecord extends FirestoreRecord {
   DateTime? get createdAt => _createdAt;
   bool hasCreatedAt() => _createdAt != null;
 
-  // "vendor_name" field.
-  String? _vendorName;
-  String get vendorName => _vendorName ?? '';
-  bool hasVendorName() => _vendorName != null;
+  // "selectedItems" field.
+  List<DocumentReference>? _selectedItems;
+  List<DocumentReference> get selectedItems => _selectedItems ?? const [];
+  bool hasSelectedItems() => _selectedItems != null;
+
+  // "isSinpe" field.
+  bool? _isSinpe;
+  bool get isSinpe => _isSinpe ?? false;
+  bool hasIsSinpe() => _isSinpe != null;
+
+  // "isCash" field.
+  bool? _isCash;
+  bool get isCash => _isCash ?? false;
+  bool hasIsCash() => _isCash != null;
+
+  // "isCard" field.
+  bool? _isCard;
+  bool get isCard => _isCard ?? false;
+  bool hasIsCard() => _isCard != null;
 
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
@@ -52,7 +67,10 @@ class OrderRecord extends FirestoreRecord {
     _status = snapshotData['status'] as String?;
     _tax = castToType<double>(snapshotData['tax']);
     _createdAt = snapshotData['created_at'] as DateTime?;
-    _vendorName = snapshotData['vendor_name'] as String?;
+    _selectedItems = getDataList(snapshotData['selectedItems']);
+    _isSinpe = snapshotData['isSinpe'] as bool?;
+    _isCash = snapshotData['isCash'] as bool?;
+    _isCard = snapshotData['isCard'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -94,7 +112,9 @@ Map<String, dynamic> createOrderRecordData({
   String? status,
   double? tax,
   DateTime? createdAt,
-  String? vendorName,
+  bool? isSinpe,
+  bool? isCash,
+  bool? isCard,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -103,7 +123,9 @@ Map<String, dynamic> createOrderRecordData({
       'status': status,
       'tax': tax,
       'created_at': createdAt,
-      'vendor_name': vendorName,
+      'isSinpe': isSinpe,
+      'isCash': isCash,
+      'isCard': isCard,
     }.withoutNulls,
   );
 
@@ -115,17 +137,30 @@ class OrderRecordDocumentEquality implements Equality<OrderRecord> {
 
   @override
   bool equals(OrderRecord? e1, OrderRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.name == e2?.name &&
         e1?.amount == e2?.amount &&
         e1?.status == e2?.status &&
         e1?.tax == e2?.tax &&
         e1?.createdAt == e2?.createdAt &&
-        e1?.vendorName == e2?.vendorName;
+        listEquality.equals(e1?.selectedItems, e2?.selectedItems) &&
+        e1?.isSinpe == e2?.isSinpe &&
+        e1?.isCash == e2?.isCash &&
+        e1?.isCard == e2?.isCard;
   }
 
   @override
-  int hash(OrderRecord? e) => const ListEquality().hash(
-      [e?.name, e?.amount, e?.status, e?.tax, e?.createdAt, e?.vendorName]);
+  int hash(OrderRecord? e) => const ListEquality().hash([
+        e?.name,
+        e?.amount,
+        e?.status,
+        e?.tax,
+        e?.createdAt,
+        e?.selectedItems,
+        e?.isSinpe,
+        e?.isCash,
+        e?.isCard
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is OrderRecord;

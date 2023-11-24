@@ -167,10 +167,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                     focusNode: _model.txtEmailFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Correo electrónico',
+                                      labelText: 'Correo Electrónico',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodySmall,
-                                      hintText: 'Ingresa un email',
+                                      hintText: 'Ingresa un correo',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodySmall,
                                       enabledBorder: OutlineInputBorder(
@@ -367,7 +367,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       focusNode: _model.txtEmailCreateFocusNode,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'correo electrónico',
+                                        labelText: 'Correo Electrónico',
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
                                         hintText: 'Ingresa un correo',
@@ -424,7 +424,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 20.0, 20.0, 0.0),
+                                        20.0, 12.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller:
                                           _model.txtPasswordCreateController,
@@ -433,7 +433,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       obscureText:
                                           !_model.txtPasswordCreateVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'contraseña',
+                                        labelText: 'Contraseña',
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
                                         hintText: 'Ingresa una contraseña',

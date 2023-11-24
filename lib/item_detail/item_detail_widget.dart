@@ -132,7 +132,7 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               4.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Atras',
+                            'Atrás',
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
@@ -231,7 +231,7 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'DESCRIPCION',
+                                'DESCRIPCIÓN',
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
                               Text(
