@@ -96,7 +96,7 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(100.0),
+            preferredSize: Size.fromHeight(80.0),
             child: AppBar(
               backgroundColor: Color(0xFFF27C82),
               automaticallyImplyLeading: false,
@@ -110,23 +110,19 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 0.0, 0.0),
-                          child: FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30.0,
-                            borderWidth: 1.0,
-                            buttonSize: 50.0,
-                            icon: Icon(
-                              Icons.arrow_back_rounded,
-                              color: Colors.white,
-                              size: 30.0,
-                            ),
-                            onPressed: () async {
-                              context.pop();
-                            },
+                        FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 30.0,
+                          borderWidth: 1.0,
+                          buttonSize: 50.0,
+                          icon: Icon(
+                            Icons.arrow_back_rounded,
+                            color: Colors.white,
+                            size: 30.0,
                           ),
+                          onPressed: () async {
+                            context.pop();
+                          },
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -146,16 +142,21 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        widget.itemParametro!.name,
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: 'Poppins',
-                              color: Colors.white,
-                              fontSize: 22.0,
-                            ),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            widget.itemParametro!.name,
+                            style: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                  fontSize: 22.0,
+                                ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -231,7 +232,7 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'DESCRIPCIÓN',
+                                'Descripción',
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
                               Text(
@@ -369,7 +370,7 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
-                                  'subtotal',
+                                  'Subtotal',
                                   style: FlutterFlowTheme.of(context).bodySmall,
                                 ),
                               ),

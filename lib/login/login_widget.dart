@@ -284,8 +284,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                           _model.txtPasswordVisibility
                                               ? Icons.visibility_outlined
                                               : Icons.visibility_off_outlined,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                          color: Color(0xFF757575),
                                           size: 20.0,
                                         ),
                                       ),
@@ -490,7 +489,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
                                             color: Color(0xFF757575),
-                                            size: 22.0,
+                                            size: 20.0,
                                           ),
                                         ),
                                       ),

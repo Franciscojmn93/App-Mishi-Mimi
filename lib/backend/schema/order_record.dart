@@ -26,11 +26,6 @@ class OrderRecord extends FirestoreRecord {
   double get amount => _amount ?? 0.0;
   bool hasAmount() => _amount != null;
 
-  // "status" field.
-  String? _status;
-  String get status => _status ?? '';
-  bool hasStatus() => _status != null;
-
   // "tax" field.
   double? _tax;
   double get tax => _tax ?? 0.0;
@@ -61,16 +56,21 @@ class OrderRecord extends FirestoreRecord {
   bool get isCard => _isCard ?? false;
   bool hasIsCard() => _isCard != null;
 
+  // "isActive" field.
+  bool? _isActive;
+  bool get isActive => _isActive ?? false;
+  bool hasIsActive() => _isActive != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _amount = castToType<double>(snapshotData['amount']);
-    _status = snapshotData['status'] as String?;
     _tax = castToType<double>(snapshotData['tax']);
     _createdAt = snapshotData['created_at'] as DateTime?;
     _selectedItems = getDataList(snapshotData['selectedItems']);
     _isSinpe = snapshotData['isSinpe'] as bool?;
     _isCash = snapshotData['isCash'] as bool?;
     _isCard = snapshotData['isCard'] as bool?;
+    _isActive = snapshotData['isActive'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -109,23 +109,23 @@ class OrderRecord extends FirestoreRecord {
 Map<String, dynamic> createOrderRecordData({
   String? name,
   double? amount,
-  String? status,
   double? tax,
   DateTime? createdAt,
   bool? isSinpe,
   bool? isCash,
   bool? isCard,
+  bool? isActive,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'name': name,
       'amount': amount,
-      'status': status,
       'tax': tax,
       'created_at': createdAt,
       'isSinpe': isSinpe,
       'isCash': isCash,
       'isCard': isCard,
+      'isActive': isActive,
     }.withoutNulls,
   );
 
@@ -140,26 +140,26 @@ class OrderRecordDocumentEquality implements Equality<OrderRecord> {
     const listEquality = ListEquality();
     return e1?.name == e2?.name &&
         e1?.amount == e2?.amount &&
-        e1?.status == e2?.status &&
         e1?.tax == e2?.tax &&
         e1?.createdAt == e2?.createdAt &&
         listEquality.equals(e1?.selectedItems, e2?.selectedItems) &&
         e1?.isSinpe == e2?.isSinpe &&
         e1?.isCash == e2?.isCash &&
-        e1?.isCard == e2?.isCard;
+        e1?.isCard == e2?.isCard &&
+        e1?.isActive == e2?.isActive;
   }
 
   @override
   int hash(OrderRecord? e) => const ListEquality().hash([
         e?.name,
         e?.amount,
-        e?.status,
         e?.tax,
         e?.createdAt,
         e?.selectedItems,
         e?.isSinpe,
         e?.isCash,
-        e?.isCard
+        e?.isCard,
+        e?.isActive
       ]);
 
   @override
