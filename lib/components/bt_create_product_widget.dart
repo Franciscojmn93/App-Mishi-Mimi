@@ -73,7 +73,7 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
           width: double.infinity,
           height: 479.0,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: FlutterFlowTheme.of(context).primaryBackground,
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
@@ -92,7 +92,7 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                     'Agregar producto',
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Poppins',
-                          color: Color(0xFF87A8AF),
+                          color: FlutterFlowTheme.of(context).accent1,
                           fontSize: 20.0,
                         ),
                   ),
@@ -114,10 +114,20 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'nombre del producto',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -147,7 +157,13 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                             validator: _model.txtNameControllerValidator
                                 .asValidator(context),
                           ),
@@ -173,10 +189,20 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'descripción de producto',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -206,7 +232,13 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                             validator: _model.txtdescriptionControllerValidator
                                 .asValidator(context),
                           ),
@@ -232,10 +264,20 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'precio de producto',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -265,7 +307,13 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                             validator: _model.txtPriceControllerValidator
                                 .asValidator(context),
                           ),
@@ -338,7 +386,7 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                               24.0, 0.0, 24.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFF394BBE),
+                          color: FlutterFlowTheme.of(context).tertiary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Poppins',
@@ -376,7 +424,7 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: Color(0xFF87A8AF),
+                                    color: FlutterFlowTheme.of(context).accent1,
                                   ),
                             ),
                           ],
@@ -393,10 +441,172 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                               onChanged: (newValue) async {
                                 setState(() => _model.switchValue1 = newValue!);
                               },
-                              activeColor: Color(0xFFE83727),
+                              activeColor:
+                                  FlutterFlowTheme.of(context).alternate,
                               activeTrackColor:
                                   FlutterFlowTheme.of(context).accent1,
-                              inactiveTrackColor: Color(0xFFEFEFEF),
+                              inactiveTrackColor:
+                                  FlutterFlowTheme.of(context).accent4,
+                              inactiveThumbColor:
+                                  FlutterFlowTheme.of(context).secondaryText,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Bebida',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Switch.adaptive(
+                              value: _model.swtDrinkValue ??= true,
+                              onChanged: (newValue) async {
+                                setState(
+                                    () => _model.swtDrinkValue = newValue!);
+                              },
+                              activeColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              activeTrackColor:
+                                  FlutterFlowTheme.of(context).accent1,
+                              inactiveTrackColor:
+                                  FlutterFlowTheme.of(context).accent4,
+                              inactiveThumbColor:
+                                  FlutterFlowTheme.of(context).secondaryText,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Comida Japonesa',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Switch.adaptive(
+                              value: _model.swtJapValue ??= true,
+                              onChanged: (newValue) async {
+                                setState(() => _model.swtJapValue = newValue!);
+                              },
+                              activeColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              activeTrackColor:
+                                  FlutterFlowTheme.of(context).accent1,
+                              inactiveTrackColor:
+                                  FlutterFlowTheme.of(context).accent4,
+                              inactiveThumbColor:
+                                  FlutterFlowTheme.of(context).secondaryText,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Comida Koreana',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Switch.adaptive(
+                              value: _model.swtKorValue ??= true,
+                              onChanged: (newValue) async {
+                                setState(() => _model.swtKorValue = newValue!);
+                              },
+                              activeColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              activeTrackColor:
+                                  FlutterFlowTheme.of(context).accent1,
+                              inactiveTrackColor:
+                                  FlutterFlowTheme.of(context).accent4,
                               inactiveThumbColor:
                                   FlutterFlowTheme.of(context).secondaryText,
                             ),
@@ -427,7 +637,7 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: Color(0xFF87A8AF),
+                                    color: FlutterFlowTheme.of(context).accent1,
                                   ),
                             ),
                           ],
@@ -444,10 +654,12 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                               onChanged: (newValue) async {
                                 setState(() => _model.switchValue2 = newValue!);
                               },
-                              activeColor: Color(0xFFE83727),
+                              activeColor:
+                                  FlutterFlowTheme.of(context).alternate,
                               activeTrackColor:
                                   FlutterFlowTheme.of(context).accent1,
-                              inactiveTrackColor: Color(0xFFEFEFEF),
+                              inactiveTrackColor:
+                                  FlutterFlowTheme.of(context).accent4,
                               inactiveThumbColor:
                                   FlutterFlowTheme.of(context).secondaryText,
                             ),
@@ -477,7 +689,10 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                                     _model.txtPriceController.text),
                                 onSale: _model.switchValue1,
                                 image: _model.uploadedFileUrl,
-                                isPromo: _model.switchValue2,
+                                isPromo: _model.swtDrinkValue,
+                                isDrink: _model.swtDrinkValue,
+                                isJap: _model.swtJapValue,
+                                isKor: _model.swtKorValue,
                               ));
                         },
                         text: 'Agregar producto',
@@ -488,13 +703,12 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                               0.0, 0.0, 0.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFFF27C82),
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
                                 fontFamily: 'Poppins',
-                                color:
-                                    FlutterFlowTheme.of(context).primaryBtnText,
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
                           elevation: 3.0,
                           borderSide: BorderSide(

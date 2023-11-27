@@ -76,7 +76,7 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
           width: double.infinity,
           height: 479.0,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: FlutterFlowTheme.of(context).primaryBackground,
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
@@ -95,6 +95,7 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                     'Crear usuario',
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 20.0,
                         ),
                   ),
@@ -116,10 +117,20 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'correo',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -149,7 +160,13 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                             validator: _model.txtEmailControllerValidator
                                 .asValidator(context),
                           ),
@@ -175,10 +192,20 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'nombre',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -208,7 +235,13 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                             validator: _model.txtNameControllerValidator
                                 .asValidator(context),
                           ),
@@ -234,10 +267,20 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'contraseña',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -267,7 +310,13 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                             validator: _model.txtpasswordControllerValidator
                                 .asValidator(context),
                           ),
@@ -293,10 +342,20 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'direccion',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -326,7 +385,13 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                             validator: _model.txtDirectionControllerValidator
                                 .asValidator(context),
                           ),
@@ -352,10 +417,20 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'número telefónico',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -385,7 +460,13 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                             validator: _model.txtphoneControllerValidator
                                 .asValidator(context),
                           ),
@@ -443,13 +524,12 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                               0.0, 0.0, 0.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFFF27C82),
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
                                 fontFamily: 'Poppins',
-                                color:
-                                    FlutterFlowTheme.of(context).primaryBtnText,
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
                           elevation: 3.0,
                           borderSide: BorderSide(

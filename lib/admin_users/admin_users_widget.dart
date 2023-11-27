@@ -62,7 +62,7 @@ class _AdminUsersWidgetState extends State<AdminUsersWidget> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(100.0),
           child: AppBar(
-            backgroundColor: Color(0xFFF27C82),
+            backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
             actions: [],
             flexibleSpace: FlexibleSpaceBar(
@@ -93,7 +93,8 @@ class _AdminUsersWidgetState extends State<AdminUsersWidget> {
                                   buttonSize: 50.0,
                                   icon: Icon(
                                     Icons.arrow_back,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 30.0,
                                   ),
                                   onPressed: () async {
@@ -113,7 +114,7 @@ class _AdminUsersWidgetState extends State<AdminUsersWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                          .primaryText,
                                       fontSize: 18.0,
                                     ),
                               ),
@@ -132,7 +133,8 @@ class _AdminUsersWidgetState extends State<AdminUsersWidget> {
                                   buttonSize: 50.0,
                                   icon: FaIcon(
                                     FontAwesomeIcons.solidAddressBook,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 30.0,
                                   ),
                                   onPressed: () async {
@@ -278,7 +280,14 @@ class _AdminUsersWidgetState extends State<AdminUsersWidget> {
                                               listViewUsersRecord.displayName,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .headlineSmall,
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                      ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -410,7 +419,9 @@ class _AdminUsersWidgetState extends State<AdminUsersWidget> {
                                             },
                                             child: FaIcon(
                                               FontAwesomeIcons.solidTrashAlt,
-                                              color: Color(0xFFFF0000),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               size: 40.0,
                                             ),
                                           ),

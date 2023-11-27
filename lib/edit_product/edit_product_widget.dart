@@ -76,11 +76,11 @@ class _EditProductWidgetState extends State<EditProductWidget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
         child: AppBar(
-          backgroundColor: Color(0xFFF27C82),
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           actions: [],
           flexibleSpace: FlexibleSpaceBar(
@@ -102,7 +102,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                         buttonSize: 50.0,
                         icon: Icon(
                           Icons.arrow_back_rounded,
-                          color: Colors.white,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           size: 30.0,
                         ),
                         onPressed: () async {
@@ -114,12 +114,12 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'Atras',
+                        'Atrás',
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
                               fontFamily: 'Poppins',
-                              color: Colors.white,
+                              color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 16.0,
                             ),
                       ),
@@ -132,7 +132,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                     'Editar producto',
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Poppins',
-                          color: Colors.white,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 22.0,
                         ),
                   ),
@@ -162,6 +162,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                   decoration: InputDecoration(
                     labelText: widget.editProduct?.name,
                     labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                    alignLabelWithHint: false,
                     hintText: 'Nombre de producto',
                     hintStyle: FlutterFlowTheme.of(context).bodySmall,
                     enabledBorder: OutlineInputBorder(
@@ -197,7 +198,10 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
                   validator:
                       _model.txtNameControllerValidator.asValidator(context),
                 ),
@@ -246,7 +250,10 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
                   validator: _model.txtDescriptionControllerValidator
                       .asValidator(context),
                 ),
@@ -295,7 +302,10 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
                   validator:
                       _model.txtPriceControllerValidator.asValidator(context),
                 ),
@@ -304,53 +314,176 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
                       'En venta',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
-                            color: Color(0xFF87A8AF),
+                            color: FlutterFlowTheme.of(context).accent1,
                           ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(105.0, 0.0, 0.0, 0.0),
+                      child: Switch.adaptive(
+                        value: _model.switchValue1 ??=
+                            widget.editProduct!.onSale,
+                        onChanged: (newValue) async {
+                          setState(() => _model.switchValue1 = newValue!);
+                        },
+                        activeColor: FlutterFlowTheme.of(context).alternate,
+                        activeTrackColor: FlutterFlowTheme.of(context).accent1,
+                        inactiveTrackColor:
+                            FlutterFlowTheme.of(context).accent4,
+                        inactiveThumbColor:
+                            FlutterFlowTheme.of(context).secondaryText,
+                      ),
                     ),
                   ],
                 ),
               ),
-              Switch.adaptive(
-                value: _model.switchValue1 ??= widget.editProduct!.onSale,
-                onChanged: (newValue) async {
-                  setState(() => _model.switchValue1 = newValue!);
-                },
-                activeColor: Color(0xFFE83727),
-                activeTrackColor: FlutterFlowTheme.of(context).accent1,
-                inactiveTrackColor: Color(0xFFEFEFEF),
-                inactiveThumbColor: FlutterFlowTheme.of(context).secondaryText,
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Incluir como promoción',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
-                            color: Color(0xFF87A8AF),
-                          ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'Incluir como promoción',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
+                        ),
+                        Switch.adaptive(
+                          value: _model.switchValue2 ??=
+                              widget.editProduct!.isPromo,
+                          onChanged: (newValue) async {
+                            setState(() => _model.switchValue2 = newValue!);
+                          },
+                          activeColor: FlutterFlowTheme.of(context).alternate,
+                          activeTrackColor:
+                              FlutterFlowTheme.of(context).accent1,
+                          inactiveTrackColor:
+                              FlutterFlowTheme.of(context).accent4,
+                          inactiveThumbColor:
+                              FlutterFlowTheme.of(context).secondaryText,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-              Switch.adaptive(
-                value: _model.switchValue2 ??= widget.editProduct!.isPromo,
-                onChanged: (newValue) async {
-                  setState(() => _model.switchValue2 = newValue!);
-                },
-                activeColor: Color(0xFFE83727),
-                activeTrackColor: FlutterFlowTheme.of(context).accent1,
-                inactiveTrackColor: Color(0xFFEFEFEF),
-                inactiveThumbColor: FlutterFlowTheme.of(context).secondaryText,
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'Es bebida',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              100.0, 0.0, 0.0, 0.0),
+                          child: Switch.adaptive(
+                            value: _model.swtDrinkValue ??=
+                                widget.editProduct!.isPromo,
+                            onChanged: (newValue) async {
+                              setState(() => _model.swtDrinkValue = newValue!);
+                            },
+                            activeColor: FlutterFlowTheme.of(context).alternate,
+                            activeTrackColor:
+                                FlutterFlowTheme.of(context).accent1,
+                            inactiveTrackColor:
+                                FlutterFlowTheme.of(context).accent4,
+                            inactiveThumbColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'Es comida Japonesa',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
+                          child: Switch.adaptive(
+                            value: _model.swtJapValue ??=
+                                widget.editProduct!.isPromo,
+                            onChanged: (newValue) async {
+                              setState(() => _model.swtJapValue = newValue!);
+                            },
+                            activeColor: FlutterFlowTheme.of(context).alternate,
+                            activeTrackColor:
+                                FlutterFlowTheme.of(context).accent1,
+                            inactiveTrackColor:
+                                FlutterFlowTheme.of(context).accent4,
+                            inactiveThumbColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 10.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'Es comida Koreana',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              25.0, 0.0, 0.0, 0.0),
+                          child: Switch.adaptive(
+                            value: _model.swtKorValue ??=
+                                widget.editProduct!.isPromo,
+                            onChanged: (newValue) async {
+                              setState(() => _model.swtKorValue = newValue!);
+                            },
+                            activeColor: FlutterFlowTheme.of(context).alternate,
+                            activeTrackColor:
+                                FlutterFlowTheme.of(context).accent1,
+                            inactiveTrackColor:
+                                FlutterFlowTheme.of(context).accent4,
+                            inactiveThumbColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
@@ -416,12 +549,13 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0xFFF27C82),
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                ),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle: FlutterFlowTheme.of(context)
+                            .titleSmall
+                            .override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                            ),
                         elevation: 3.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
@@ -447,6 +581,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                         onSale: _model.switchValue1,
                         image: _model.uploadedFileUrl,
                         isPromo: _model.switchValue2,
+                        isDrink: _model.swtDrinkValue,
+                        isJap: _model.swtJapValue,
+                        isKor: _model.swtKorValue,
                       ));
                     },
                     text: 'Guardar Cambios',
@@ -457,11 +594,11 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFF87A8AF),
+                      color: FlutterFlowTheme.of(context).accent1,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Lexend Deca',
-                                color: Colors.white,
+                                color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.normal,
                               ),

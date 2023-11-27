@@ -91,7 +91,7 @@ class _CartWidgetState extends State<CartWidget> {
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(113.0),
             child: AppBar(
-              backgroundColor: Color(0xFFF27C82),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               actions: [],
               flexibleSpace: FlexibleSpaceBar(
@@ -127,7 +127,7 @@ class _CartWidgetState extends State<CartWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 4.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Atras',
+                              'Atrás',
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -143,7 +143,7 @@ class _CartWidgetState extends State<CartWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                         child: Text(
-                          'Detalle de Orden',
+                          'Detalle de orden',
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
@@ -370,7 +370,13 @@ class _CartWidgetState extends State<CartWidget> {
                                                                           .name,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .titleMedium,
+                                                                          .titleMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                          ),
                                                                     ),
                                                                   ),
                                                                   Padding(
@@ -384,8 +390,9 @@ class _CartWidgetState extends State<CartWidget> {
                                                                         FaIcon(
                                                                       FontAwesomeIcons
                                                                           .trashAlt,
-                                                                      color: Color(
-                                                                          0xFFCE2626),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .alternate,
                                                                       size:
                                                                           24.0,
                                                                     ),
@@ -445,7 +452,13 @@ class _CartWidgetState extends State<CartWidget> {
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .titleMedium,
+                                                                          .titleMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                          ),
                                                                     ),
                                                                   ],
                                                                 ),
@@ -636,7 +649,7 @@ class _CartWidgetState extends State<CartWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0xFFE83727),
+                        color: FlutterFlowTheme.of(context).tertiary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Lexend Deca',

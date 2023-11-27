@@ -61,7 +61,7 @@ class _AdminOrdersWidgetState extends State<AdminOrdersWidget> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(100.0),
           child: AppBar(
-            backgroundColor: Color(0xFFF27C82),
+            backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
             actions: [],
             flexibleSpace: FlexibleSpaceBar(
@@ -92,7 +92,8 @@ class _AdminOrdersWidgetState extends State<AdminOrdersWidget> {
                                   buttonSize: 50.0,
                                   icon: Icon(
                                     Icons.arrow_back,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 30.0,
                                   ),
                                   onPressed: () async {
@@ -112,7 +113,7 @@ class _AdminOrdersWidgetState extends State<AdminOrdersWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                          .primaryText,
                                       fontSize: 18.0,
                                     ),
                               ),
@@ -223,7 +224,14 @@ class _AdminOrdersWidgetState extends State<AdminOrdersWidget> {
                                               listViewOrderRecord.name,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .headlineSmall,
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                      ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -244,7 +252,13 @@ class _AdminOrdersWidgetState extends State<AdminOrdersWidget> {
                                                 maxLines: 2,
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodySmall,
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -350,7 +364,9 @@ class _AdminOrdersWidgetState extends State<AdminOrdersWidget> {
                                             },
                                             child: FaIcon(
                                               FontAwesomeIcons.solidTrashAlt,
-                                              color: Color(0xFFFF0000),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               size: 40.0,
                                             ),
                                           ),
