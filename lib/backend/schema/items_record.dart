@@ -61,6 +61,21 @@ class ItemsRecord extends FirestoreRecord {
   bool get studentPromo => _studentPromo ?? false;
   bool hasStudentPromo() => _studentPromo != null;
 
+  // "isDrink" field.
+  bool? _isDrink;
+  bool get isDrink => _isDrink ?? false;
+  bool hasIsDrink() => _isDrink != null;
+
+  // "isJap" field.
+  bool? _isJap;
+  bool get isJap => _isJap ?? false;
+  bool hasIsJap() => _isJap != null;
+
+  // "isKor" field.
+  bool? _isKor;
+  bool get isKor => _isKor ?? false;
+  bool hasIsKor() => _isKor != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _description = snapshotData['description'] as String?;
@@ -71,6 +86,9 @@ class ItemsRecord extends FirestoreRecord {
     _image = snapshotData['image'] as String?;
     _isPromo = snapshotData['isPromo'] as bool?;
     _studentPromo = snapshotData['studentPromo'] as bool?;
+    _isDrink = snapshotData['isDrink'] as bool?;
+    _isJap = snapshotData['isJap'] as bool?;
+    _isKor = snapshotData['isKor'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -116,6 +134,9 @@ Map<String, dynamic> createItemsRecordData({
   String? image,
   bool? isPromo,
   bool? studentPromo,
+  bool? isDrink,
+  bool? isJap,
+  bool? isKor,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -128,6 +149,9 @@ Map<String, dynamic> createItemsRecordData({
       'image': image,
       'isPromo': isPromo,
       'studentPromo': studentPromo,
+      'isDrink': isDrink,
+      'isJap': isJap,
+      'isKor': isKor,
     }.withoutNulls,
   );
 
@@ -147,7 +171,10 @@ class ItemsRecordDocumentEquality implements Equality<ItemsRecord> {
         e1?.onSale == e2?.onSale &&
         e1?.image == e2?.image &&
         e1?.isPromo == e2?.isPromo &&
-        e1?.studentPromo == e2?.studentPromo;
+        e1?.studentPromo == e2?.studentPromo &&
+        e1?.isDrink == e2?.isDrink &&
+        e1?.isJap == e2?.isJap &&
+        e1?.isKor == e2?.isKor;
   }
 
   @override
@@ -160,7 +187,10 @@ class ItemsRecordDocumentEquality implements Equality<ItemsRecord> {
         e?.onSale,
         e?.image,
         e?.isPromo,
-        e?.studentPromo
+        e?.studentPromo,
+        e?.isDrink,
+        e?.isJap,
+        e?.isKor
       ]);
 
   @override

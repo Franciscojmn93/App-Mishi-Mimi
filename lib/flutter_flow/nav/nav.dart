@@ -167,6 +167,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => EditProductWidget(
                 editProduct: params.getParam('editProduct', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'catDrink',
+              path: 'catDrink',
+              builder: (context, params) => CatDrinkWidget(),
+            ),
+            FFRoute(
+              name: 'catJap',
+              path: 'catJap',
+              builder: (context, params) => CatJapWidget(),
+            ),
+            FFRoute(
+              name: 'catKor',
+              path: 'catKor',
+              builder: (context, params) => CatKorWidget(),
+            ),
+            FFRoute(
+              name: 'adminOrders',
+              path: 'adminOrders',
+              builder: (context, params) => AdminOrdersWidget(),
+            ),
+            FFRoute(
+              name: 'editOrder',
+              path: 'editOrder',
+              asyncParams: {
+                'editOrder': getDoc(['order'], OrderRecord.fromSnapshot),
+              },
+              builder: (context, params) => EditOrderWidget(
+                editOrder: params.getParam('editOrder', ParamType.Document),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

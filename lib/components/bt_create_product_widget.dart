@@ -53,6 +53,8 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Form(
       key: _model.formKey,
       autovalidateMode: AutovalidateMode.disabled,

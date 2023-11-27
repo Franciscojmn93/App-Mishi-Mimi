@@ -45,6 +45,8 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFEFEFEF),

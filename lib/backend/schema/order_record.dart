@@ -46,6 +46,11 @@ class OrderRecord extends FirestoreRecord {
   String get vendorName => _vendorName ?? '';
   bool hasVendorName() => _vendorName != null;
 
+  // "IsActive" field.
+  bool? _isActive;
+  bool get isActive => _isActive ?? false;
+  bool hasIsActive() => _isActive != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _amount = castToType<double>(snapshotData['amount']);
@@ -53,6 +58,7 @@ class OrderRecord extends FirestoreRecord {
     _tax = castToType<double>(snapshotData['tax']);
     _createdAt = snapshotData['created_at'] as DateTime?;
     _vendorName = snapshotData['vendor_name'] as String?;
+    _isActive = snapshotData['IsActive'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -95,6 +101,7 @@ Map<String, dynamic> createOrderRecordData({
   double? tax,
   DateTime? createdAt,
   String? vendorName,
+  bool? isActive,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -104,6 +111,7 @@ Map<String, dynamic> createOrderRecordData({
       'tax': tax,
       'created_at': createdAt,
       'vendor_name': vendorName,
+      'IsActive': isActive,
     }.withoutNulls,
   );
 
@@ -120,12 +128,20 @@ class OrderRecordDocumentEquality implements Equality<OrderRecord> {
         e1?.status == e2?.status &&
         e1?.tax == e2?.tax &&
         e1?.createdAt == e2?.createdAt &&
-        e1?.vendorName == e2?.vendorName;
+        e1?.vendorName == e2?.vendorName &&
+        e1?.isActive == e2?.isActive;
   }
 
   @override
-  int hash(OrderRecord? e) => const ListEquality().hash(
-      [e?.name, e?.amount, e?.status, e?.tax, e?.createdAt, e?.vendorName]);
+  int hash(OrderRecord? e) => const ListEquality().hash([
+        e?.name,
+        e?.amount,
+        e?.status,
+        e?.tax,
+        e?.createdAt,
+        e?.vendorName,
+        e?.isActive
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is OrderRecord;

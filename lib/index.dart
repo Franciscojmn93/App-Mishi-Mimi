@@ -12,3 +12,8 @@ export '/admin_products/admin_products_widget.dart' show AdminProductsWidget;
 export '/menu_no_register_users/menu_no_register_users_widget.dart'
     show MenuNoRegisterUsersWidget;
 export '/edit_product/edit_product_widget.dart' show EditProductWidget;
+export '/cat_drink/cat_drink_widget.dart' show CatDrinkWidget;
+export '/cat_jap/cat_jap_widget.dart' show CatJapWidget;
+export '/cat_kor/cat_kor_widget.dart' show CatKorWidget;
+export '/admin_orders/admin_orders_widget.dart' show AdminOrdersWidget;
+export '/edit_order/edit_order_widget.dart' show EditOrderWidget;

@@ -46,6 +46,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFEFEFEF),
