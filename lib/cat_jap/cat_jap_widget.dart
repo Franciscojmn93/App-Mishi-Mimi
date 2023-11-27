@@ -8,28 +8,27 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'menu_model.dart';
-export 'menu_model.dart';
+import 'cat_jap_model.dart';
+export 'cat_jap_model.dart';
 
-class MenuWidget extends StatefulWidget {
-  const MenuWidget({Key? key}) : super(key: key);
+class CatJapWidget extends StatefulWidget {
+  const CatJapWidget({Key? key}) : super(key: key);
 
   @override
-  _MenuWidgetState createState() => _MenuWidgetState();
+  _CatJapWidgetState createState() => _CatJapWidgetState();
 }
 
-class _MenuWidgetState extends State<MenuWidget> {
-  late MenuModel _model;
+class _CatJapWidgetState extends State<CatJapWidget> {
+  late CatJapModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MenuModel());
+    _model = createModel(context, () => CatJapModel());
   }
 
   @override
@@ -83,9 +82,9 @@ class _MenuWidgetState extends State<MenuWidget> {
             ),
           );
         }
-        List<CartRecord> menuCartRecordList = snapshot.data!;
-        final menuCartRecord =
-            menuCartRecordList.isNotEmpty ? menuCartRecordList.first : null;
+        List<CartRecord> catJapCartRecordList = snapshot.data!;
+        final catJapCartRecord =
+            catJapCartRecordList.isNotEmpty ? catJapCartRecordList.first : null;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -114,6 +113,24 @@ class _MenuWidgetState extends State<MenuWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 0.0, 5.0, 0.0),
+                                child: FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 30.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 50.0,
+                                  icon: Icon(
+                                    Icons.arrow_back_rounded,
+                                    color: Colors.white,
+                                    size: 30.0,
+                                  ),
+                                  onPressed: () async {
+                                    context.safePop();
+                                  },
+                                ),
+                              ),
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -130,7 +147,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                                   ),
                                 ),
                               ),
-                              if (menuCartRecord != null)
+                              if (catJapCartRecord != null)
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30.0,
@@ -164,28 +181,6 @@ class _MenuWidgetState extends State<MenuWidget> {
                                     },
                                   ),
                                 ),
-                              if (valueOrDefault<bool>(
-                                  currentUserDocument?.isAdmin, false))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 0.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 50.0,
-                                      icon: FaIcon(
-                                        FontAwesomeIcons.ad,
-                                        color: Colors.white,
-                                        size: 30.0,
-                                      ),
-                                      onPressed: () async {
-                                        context.pushNamed('AdminArea');
-                                      },
-                                    ),
-                                  ),
-                                ),
                             ],
                           ),
                         ),
@@ -211,249 +206,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Qué vas a ordenar hoy?',
-                            style: FlutterFlowTheme.of(context).bodySmall,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      width: 359.0,
-                      height: 130.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 4.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 5.0, 5.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1685156328637-886a37f8cd34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8aWNvbiUyMGRyaW5rc3xlbnwwfHx8fDE2OTk4Mjk0NzZ8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.25,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.1,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 5.0, 5.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        context.pushNamed('catDrink');
-                                      },
-                                      text: 'Bebidas',
-                                      options: FFButtonOptions(
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.06,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFFF27C82),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 4.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 5.0, 5.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1532347231146-80afc9e3df2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxrb3JlYW4lMjBmb29kc3xlbnwwfHx8fDE2OTk4Mjk1MjZ8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.25,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.1,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 5.0, 5.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () {
-                                        print('btnkorean pressed ...');
-                                      },
-                                      text: 'Koreana',
-                                      options: FFButtonOptions(
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.06,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFFF27C82),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 4.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 5.0, 5.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHxrb3JlYW4lMjB8ZW58MHx8fHwxNjk5ODI5NjI0fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.25,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.1,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 5.0, 5.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () {
-                                        print('btnjapanece pressed ...');
-                                      },
-                                      text: 'Japonesa',
-                                      options: FFButtonOptions(
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.06,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFFF27C82),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Promociones para ti',
+                            'Qué comida japonesa vas a ordenar hoy?',
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -465,7 +218,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                       child: StreamBuilder<List<ItemsRecord>>(
                         stream: queryItemsRecord(
                           queryBuilder: (itemsRecord) => itemsRecord.where(
-                            'isPromo',
+                            'isJap',
                             isEqualTo: true,
                           ),
                         ),

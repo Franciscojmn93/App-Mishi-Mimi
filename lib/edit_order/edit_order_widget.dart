@@ -9,33 +9,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'edit_user_model.dart';
-export 'edit_user_model.dart';
+import 'edit_order_model.dart';
+export 'edit_order_model.dart';
 
-class EditUserWidget extends StatefulWidget {
-  const EditUserWidget({
+class EditOrderWidget extends StatefulWidget {
+  const EditOrderWidget({
     Key? key,
-    required this.userEdit,
+    required this.editOrder,
   }) : super(key: key);
 
-  final UsersRecord? userEdit;
+  final OrderRecord? editOrder;
 
   @override
-  _EditUserWidgetState createState() => _EditUserWidgetState();
+  _EditOrderWidgetState createState() => _EditOrderWidgetState();
 }
 
-class _EditUserWidgetState extends State<EditUserWidget> {
-  late EditUserModel _model;
+class _EditOrderWidgetState extends State<EditOrderWidget> {
+  late EditOrderModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EditUserModel());
-
-    _model.txtNameController ??= TextEditingController();
-    _model.txtNameFocusNode ??= FocusNode();
+    _model = createModel(context, () => EditOrderModel());
   }
 
   @override
@@ -144,51 +141,12 @@ class _EditUserWidgetState extends State<EditUserWidget> {
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
-              child: TextFormField(
-                controller: _model.txtNameController,
-                focusNode: _model.txtNameFocusNode,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: widget.userEdit?.displayName,
-                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                  hintText: 'Tu nombre',
-                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                      width: 2.0,
+              child: Text(
+                FFAppState().orderCreatorName,
+                style: FlutterFlowTheme.of(context).titleSmall.override(
+                      fontFamily: 'Poppins',
+                      color: Color(0xFF87A8AF),
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  filled: true,
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
-                validator:
-                    _model.txtNameControllerValidator.asValidator(context),
               ),
             ),
             Row(
@@ -197,7 +155,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Hacer administrador',
+                    'Orden Completada?',
                     style: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
                           color: Color(0xFF87A8AF),
@@ -207,7 +165,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
               ],
             ),
             Switch.adaptive(
-              value: _model.switchValue ??= widget.userEdit!.isAdmin,
+              value: _model.switchValue ??= widget.editOrder!.isActive,
               onChanged: (newValue) async {
                 setState(() => _model.switchValue = newValue!);
               },
@@ -222,9 +180,9 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    await widget.userEdit!.reference
-                        .update(createUsersRecordData(
-                      isAdmin: _model.switchValue,
+                    await widget.editOrder!.reference
+                        .update(createOrderRecordData(
+                      isActive: true,
                     ));
                   },
                   text: 'Guardar Cambios',

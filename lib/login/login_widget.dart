@@ -64,6 +64,8 @@ class _LoginWidgetState extends State<LoginWidget>
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -167,10 +169,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                     focusNode: _model.txtEmailFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Correo Electrónico',
+                                      labelText: 'Correo electrónico',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodySmall,
-                                      hintText: 'Ingresa un correo',
+                                      hintText: 'Ingresa un email',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodySmall,
                                       enabledBorder: OutlineInputBorder(
@@ -284,7 +286,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                           _model.txtPasswordVisibility
                                               ? Icons.visibility_outlined
                                               : Icons.visibility_off_outlined,
-                                          color: Color(0xFF757575),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                           size: 20.0,
                                         ),
                                       ),
@@ -366,7 +369,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       focusNode: _model.txtEmailCreateFocusNode,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Correo Electrónico',
+                                        labelText: 'correo electrónico',
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
                                         hintText: 'Ingresa un correo',
@@ -423,7 +426,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 12.0, 20.0, 0.0),
+                                        20.0, 20.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller:
                                           _model.txtPasswordCreateController,
@@ -432,7 +435,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       obscureText:
                                           !_model.txtPasswordCreateVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'Contraseña',
+                                        labelText: 'contraseña',
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
                                         hintText: 'Ingresa una contraseña',
@@ -489,7 +492,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
                                             color: Color(0xFF757575),
-                                            size: 20.0,
+                                            size: 22.0,
                                           ),
                                         ),
                                       ),

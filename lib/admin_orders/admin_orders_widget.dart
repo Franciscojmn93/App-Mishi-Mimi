@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/bt_create_product_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -11,25 +10,25 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'admin_products_model.dart';
-export 'admin_products_model.dart';
+import 'admin_orders_model.dart';
+export 'admin_orders_model.dart';
 
-class AdminProductsWidget extends StatefulWidget {
-  const AdminProductsWidget({Key? key}) : super(key: key);
+class AdminOrdersWidget extends StatefulWidget {
+  const AdminOrdersWidget({Key? key}) : super(key: key);
 
   @override
-  _AdminProductsWidgetState createState() => _AdminProductsWidgetState();
+  _AdminOrdersWidgetState createState() => _AdminOrdersWidgetState();
 }
 
-class _AdminProductsWidgetState extends State<AdminProductsWidget> {
-  late AdminProductsModel _model;
+class _AdminOrdersWidgetState extends State<AdminOrdersWidget> {
+  late AdminOrdersModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AdminProductsModel());
+    _model = createModel(context, () => AdminOrdersModel());
   }
 
   @override
@@ -107,7 +106,7 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Administrar Productos',
+                                'Administrar Órdenes',
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
@@ -119,49 +118,6 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                               ),
                             ),
                           ),
-                          if (valueOrDefault<bool>(
-                              currentUserDocument?.isAdmin, false))
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 0.0, 0.0, 0.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => FlutterFlowIconButton(
-                                  borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 50.0,
-                                  icon: Icon(
-                                    Icons.add_circle_outline,
-                                    color: Colors.white,
-                                    size: 30.0,
-                                  ),
-                                  onPressed: () async {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      enableDrag: false,
-                                      context: context,
-                                      builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () => _model
-                                                  .unfocusNode.canRequestFocus
-                                              ? FocusScope.of(context)
-                                                  .requestFocus(
-                                                      _model.unfocusNode)
-                                              : FocusScope.of(context)
-                                                  .unfocus(),
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: BtCreateProductWidget(),
-                                          ),
-                                        );
-                                      },
-                                    ).then((value) => safeSetState(() {}));
-                                  },
-                                ),
-                              ),
-                            ),
                         ],
                       ),
                     ),
@@ -180,8 +136,8 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
             children: [
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                child: StreamBuilder<List<ItemsRecord>>(
-                  stream: queryItemsRecord(),
+                child: StreamBuilder<List<OrderRecord>>(
+                  stream: queryOrderRecord(),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
@@ -197,16 +153,16 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                         ),
                       );
                     }
-                    List<ItemsRecord> listViewItemsRecordList = snapshot.data!;
+                    List<OrderRecord> listViewOrderRecordList = snapshot.data!;
                     return ListView.builder(
                       padding: EdgeInsets.zero,
                       primary: false,
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
-                      itemCount: listViewItemsRecordList.length,
+                      itemCount: listViewOrderRecordList.length,
                       itemBuilder: (context, listViewIndex) {
-                        final listViewItemsRecord =
-                            listViewItemsRecordList[listViewIndex];
+                        final listViewOrderRecord =
+                            listViewOrderRecordList[listViewIndex];
                         return Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
@@ -216,16 +172,19 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              FFAppState().orderCreatorName =
+                                  listViewOrderRecord.name;
+
                               context.pushNamed(
-                                'editProduct',
+                                'editOrder',
                                 queryParameters: {
-                                  'editProduct': serializeParam(
-                                    listViewItemsRecord,
+                                  'editOrder': serializeParam(
+                                    listViewOrderRecord,
                                     ParamType.Document,
                                   ),
                                 }.withoutNulls,
                                 extra: <String, dynamic>{
-                                  'editProduct': listViewItemsRecord,
+                                  'editOrder': listViewOrderRecord,
                                 },
                               );
                             },
@@ -249,20 +208,6 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 1.0, 1.0, 1.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(6.0),
-                                        child: Image.network(
-                                          listViewItemsRecord.image,
-                                          width: 80.0,
-                                          height: 80.0,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -275,7 +220,7 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              listViewItemsRecord.name,
+                                              listViewOrderRecord.name,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall,
@@ -284,12 +229,17 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 8.0, 0.0),
                                               child: AutoSizeText(
-                                                listViewItemsRecord.price
-                                                    .toString()
-                                                    .maybeHandleOverflow(
-                                                      maxChars: 70,
-                                                      replacement: '…',
-                                                    ),
+                                                formatNumber(
+                                                  listViewOrderRecord.amount,
+                                                  formatType:
+                                                      FormatType.decimal,
+                                                  decimalType:
+                                                      DecimalType.automatic,
+                                                  currency: '₡',
+                                                ).maybeHandleOverflow(
+                                                  maxChars: 70,
+                                                  replacement: '…',
+                                                ),
                                                 textAlign: TextAlign.start,
                                                 maxLines: 2,
                                                 style:
@@ -318,42 +268,8 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              var confirmDialogResponse =
-                                                  await showDialog<bool>(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            title: Text(
-                                                                'Eliminar usuario'),
-                                                            content: Text(
-                                                                'Desea eliminar este usuario?'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext,
-                                                                        false),
-                                                                child: Text(
-                                                                    'Cancelar'),
-                                                              ),
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext,
-                                                                        true),
-                                                                child: Text(
-                                                                    'Confirmar'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        },
-                                                      ) ??
-                                                      false;
-                                              if (confirmDialogResponse) {
-                                                await listViewItemsRecord
-                                                    .reference
-                                                    .delete();
+                                              if (listViewOrderRecord
+                                                  .isActive) {
                                                 await showDialog(
                                                   context: context,
                                                   builder:
@@ -361,7 +277,7 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                                     return AlertDialog(
                                                       title: Text('Eliminar'),
                                                       content: Text(
-                                                          'Producto eliminado con exito'),
+                                                          'No es posible eliminar esta órden, porque sigue activa en el sistema.'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
@@ -373,6 +289,63 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                                     );
                                                   },
                                                 );
+                                              } else {
+                                                var confirmDialogResponse =
+                                                    await showDialog<bool>(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return AlertDialog(
+                                                              title: Text(
+                                                                  'Eliminar Órden'),
+                                                              content: Text(
+                                                                  'Desea eliminar esta órden?'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext,
+                                                                          false),
+                                                                  child: Text(
+                                                                      'Cancelar'),
+                                                                ),
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext,
+                                                                          true),
+                                                                  child: Text(
+                                                                      'Confirmar'),
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        ) ??
+                                                        false;
+                                                if (confirmDialogResponse) {
+                                                  await listViewOrderRecord
+                                                      .reference
+                                                      .delete();
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: Text('Eliminar'),
+                                                        content: Text(
+                                                            'Órden eliminada con éxito'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  );
+                                                }
                                               }
                                             },
                                             child: FaIcon(

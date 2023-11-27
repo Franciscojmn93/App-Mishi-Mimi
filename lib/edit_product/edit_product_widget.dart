@@ -72,6 +72,8 @@ class _EditProductWidgetState extends State<EditProductWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

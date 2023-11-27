@@ -47,6 +47,8 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return StreamBuilder<List<ItemsRecord>>(
       stream: queryItemsRecord(
         singleRecord: true,

@@ -70,6 +70,8 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
