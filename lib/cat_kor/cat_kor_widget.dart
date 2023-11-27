@@ -95,7 +95,7 @@ class _CatKorWidgetState extends State<CatKorWidget> {
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(116.0),
               child: AppBar(
-                backgroundColor: Color(0xFFF27C82),
+                backgroundColor: FlutterFlowTheme.of(context).primary,
                 automaticallyImplyLeading: false,
                 actions: [],
                 flexibleSpace: FlexibleSpaceBar(
@@ -123,7 +123,8 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                                   buttonSize: 50.0,
                                   icon: Icon(
                                     Icons.arrow_back_rounded,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 30.0,
                                   ),
                                   onPressed: () async {
@@ -142,7 +143,7 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .primaryText,
                                         ),
                                   ),
                                 ),
@@ -155,7 +156,8 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                                   buttonSize: 50.0,
                                   icon: Icon(
                                     Icons.shopping_cart,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 30.0,
                                   ),
                                   onPressed: () async {
@@ -173,7 +175,8 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                                     buttonSize: 50.0,
                                     icon: Icon(
                                       Icons.person,
-                                      color: Colors.white,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       size: 30.0,
                                     ),
                                     onPressed: () async {
@@ -206,7 +209,7 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Qué comida koreana vas a ordenar hoy?',
+                            '¿Qué comida koreana vas a ordenar hoy?',
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -320,7 +323,13 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                                                     listViewItemsRecord.name,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .headlineSmall,
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                        ),
                                                   ),
                                                   Padding(
                                                     padding:
@@ -370,7 +379,14 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                                                   textAlign: TextAlign.end,
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                      ),
                                                 ),
                                               ),
                                             ],
@@ -404,12 +420,13 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                                   24.0, 0.0, 24.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: Color(0xFF394BBE),
+                              color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                   ),
                               elevation: 3.0,
                               borderSide: BorderSide(

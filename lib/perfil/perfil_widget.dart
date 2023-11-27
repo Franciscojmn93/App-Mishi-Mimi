@@ -50,7 +50,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFEFEFEF),
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -58,7 +58,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: 160.0,
             decoration: BoxDecoration(
-              color: Color(0xFFF27C82),
+              color: FlutterFlowTheme.of(context).primary,
             ),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
@@ -131,7 +131,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   .headlineSmall
                                   .override(
                                     fontFamily: 'Lexend Deca',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -146,7 +147,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Lexend Deca',
-                                    color: Color(0xB4FFFFFF),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -170,7 +172,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                   'Cambiar a modo oscuro o claro',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
-                        color: Color(0xFF87A8AF),
+                        color: FlutterFlowTheme.of(context).accent1,
                       ),
                 ),
               ],
@@ -181,10 +183,15 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                 Theme.of(context).brightness == Brightness.dark,
             onChanged: (newValue) async {
               setState(() => _model.switchValue = newValue!);
+              if (newValue!) {
+                setDarkModeSetting(context, ThemeMode.dark);
+              } else {
+                setDarkModeSetting(context, ThemeMode.light);
+              }
             },
-            activeColor: FlutterFlowTheme.of(context).textColor,
-            activeTrackColor: FlutterFlowTheme.of(context).accent1,
-            inactiveTrackColor: Color(0xFFEFEFEF),
+            activeColor: FlutterFlowTheme.of(context).accent1,
+            activeTrackColor: FlutterFlowTheme.of(context).accent2,
+            inactiveTrackColor: FlutterFlowTheme.of(context).accent4,
             inactiveThumbColor: FlutterFlowTheme.of(context).secondaryText,
           ),
           Padding(
@@ -223,7 +230,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Poppins',
-                                  color: Color(0xFF87A8AF),
+                                  color: FlutterFlowTheme.of(context).accent1,
                                 ),
                           ),
                           FlutterFlowIconButton(
@@ -265,7 +272,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
 
                 context.goNamedAuth('menuNoRegisterUsers', context.mounted);
               },
-              text: 'Cerrar sesion',
+              text: 'Cerrar sesión',
               options: FFButtonOptions(
                 width: 160.0,
                 height: 50.0,
@@ -274,7 +281,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Poppins',
-                      color: Color(0xFF87A8AF),
+                      color: FlutterFlowTheme.of(context).accent1,
                     ),
                 elevation: 3.0,
                 borderSide: BorderSide(

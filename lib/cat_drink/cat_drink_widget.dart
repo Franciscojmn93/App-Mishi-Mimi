@@ -96,7 +96,7 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(116.0),
               child: AppBar(
-                backgroundColor: Color(0xFFF27C82),
+                backgroundColor: FlutterFlowTheme.of(context).primary,
                 automaticallyImplyLeading: false,
                 actions: [],
                 flexibleSpace: FlexibleSpaceBar(
@@ -124,7 +124,8 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                   buttonSize: 50.0,
                                   icon: Icon(
                                     Icons.arrow_back_rounded,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 30.0,
                                   ),
                                   onPressed: () async {
@@ -143,7 +144,7 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .primaryText,
                                         ),
                                   ),
                                 ),
@@ -156,7 +157,8 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                   buttonSize: 50.0,
                                   icon: Icon(
                                     Icons.shopping_cart,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 30.0,
                                   ),
                                   onPressed: () async {
@@ -174,7 +176,8 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                     buttonSize: 50.0,
                                     icon: Icon(
                                       Icons.person,
-                                      color: Colors.white,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       size: 30.0,
                                     ),
                                     onPressed: () async {
@@ -207,7 +210,7 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Qué bebida vas a ordenar hoy?',
+                            '¿Qué bebida vas a ordenar hoy?',
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -321,7 +324,13 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                                     listViewItemsRecord.name,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .headlineSmall,
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                        ),
                                                   ),
                                                   Padding(
                                                     padding:
@@ -341,7 +350,14 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodySmall,
+                                                              .bodySmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                              ),
                                                     ),
                                                   ),
                                                 ],
@@ -371,7 +387,14 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                                   textAlign: TextAlign.end,
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent1,
+                                                      ),
                                                 ),
                                               ),
                                             ],
@@ -405,12 +428,13 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                   24.0, 0.0, 24.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: Color(0xFF394BBE),
+                              color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                   ),
                               elevation: 3.0,
                               borderSide: BorderSide(

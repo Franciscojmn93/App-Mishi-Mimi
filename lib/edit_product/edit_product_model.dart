@@ -33,6 +33,12 @@ class EditProductModel extends FlutterFlowModel<EditProductWidget> {
   bool? switchValue1;
   // State field(s) for Switch widget.
   bool? switchValue2;
+  // State field(s) for swtDrink widget.
+  bool? swtDrinkValue;
+  // State field(s) for swtJap widget.
+  bool? swtJapValue;
+  // State field(s) for swtKor widget.
+  bool? swtKorValue;
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));

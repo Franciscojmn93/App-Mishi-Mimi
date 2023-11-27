@@ -100,7 +100,7 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(100.0),
             child: AppBar(
-              backgroundColor: Color(0xFFF27C82),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               actions: [],
               flexibleSpace: FlexibleSpaceBar(
@@ -273,7 +273,8 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                           width: 160.0,
                           height: 50.0,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             borderRadius: BorderRadius.circular(25.0),
                             shape: BoxShape.rectangle,
                             border: Border.all(
@@ -285,15 +286,15 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                             decrementIconBuilder: (enabled) => FaIcon(
                               FontAwesomeIcons.minus,
                               color: enabled
-                                  ? Color(0xFF87A8AF)
-                                  : Color(0xFFEEEEEE),
+                                  ? FlutterFlowTheme.of(context).accent2
+                                  : FlutterFlowTheme.of(context).accent4,
                               size: 20.0,
                             ),
                             incrementIconBuilder: (enabled) => FaIcon(
                               FontAwesomeIcons.plus,
                               color: enabled
-                                  ? Color(0xFFE83727)
-                                  : Color(0xFFEEEEEE),
+                                  ? FlutterFlowTheme.of(context).alternate
+                                  : FlutterFlowTheme.of(context).accent4,
                               size: 20.0,
                             ),
                             countBuilder: (count) => Text(
@@ -523,15 +524,16 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                                   0.0, 0.0, 0.0, 0.0),
                               color: valueOrDefault<Color>(
                                 !loggedIn
-                                    ? Color(0xFFCE2626)
-                                    : Color(0xFF87A8AF),
+                                    ? FlutterFlowTheme.of(context).alternate
+                                    : FlutterFlowTheme.of(context).accent1,
                                 FlutterFlowTheme.of(context).primary,
                               ),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Lexend Deca',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w500,
                                   ),

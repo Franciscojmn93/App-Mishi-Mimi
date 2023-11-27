@@ -60,6 +60,12 @@ class BtCreateProductModel extends FlutterFlowModel<BtCreateProductWidget> {
 
   // State field(s) for Switch widget.
   bool? switchValue1;
+  // State field(s) for swtDrink widget.
+  bool? swtDrinkValue;
+  // State field(s) for swtJap widget.
+  bool? swtJapValue;
+  // State field(s) for swtKor widget.
+  bool? swtKorValue;
   // State field(s) for Switch widget.
   bool? switchValue2;
 

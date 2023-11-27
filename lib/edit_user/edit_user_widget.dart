@@ -60,11 +60,11 @@ class _EditUserWidgetState extends State<EditUserWidget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
         child: AppBar(
-          backgroundColor: Color(0xFFF27C82),
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           actions: [],
           flexibleSpace: FlexibleSpaceBar(
@@ -86,7 +86,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                         buttonSize: 50.0,
                         icon: Icon(
                           Icons.arrow_back_rounded,
-                          color: Colors.white,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           size: 30.0,
                         ),
                         onPressed: () async {
@@ -98,12 +98,12 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'Atras',
+                        'Atrás',
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
                               fontFamily: 'Poppins',
-                              color: Colors.white,
+                              color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 16.0,
                             ),
                       ),
@@ -116,7 +116,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                     'Editar Usuario',
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Poppins',
-                          color: Colors.white,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 22.0,
                         ),
                   ),
@@ -200,7 +200,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                     'Hacer administrador',
                     style: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
-                          color: Color(0xFF87A8AF),
+                          color: FlutterFlowTheme.of(context).accent1,
                         ),
                   ),
                 ),
@@ -211,9 +211,9 @@ class _EditUserWidgetState extends State<EditUserWidget> {
               onChanged: (newValue) async {
                 setState(() => _model.switchValue = newValue!);
               },
-              activeColor: Color(0xFFE83727),
+              activeColor: FlutterFlowTheme.of(context).alternate,
               activeTrackColor: FlutterFlowTheme.of(context).accent1,
-              inactiveTrackColor: Color(0xFFEFEFEF),
+              inactiveTrackColor: FlutterFlowTheme.of(context).accent4,
               inactiveThumbColor: FlutterFlowTheme.of(context).secondaryText,
             ),
             Align(
@@ -234,10 +234,10 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFF87A8AF),
+                    color: FlutterFlowTheme.of(context).accent1,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Lexend Deca',
-                          color: Colors.white,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 16.0,
                           fontWeight: FontWeight.normal,
                         ),

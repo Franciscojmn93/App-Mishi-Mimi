@@ -90,7 +90,7 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(116.0),
               child: AppBar(
-                backgroundColor: Color(0xFFF27C82),
+                backgroundColor: FlutterFlowTheme.of(context).primary,
                 automaticallyImplyLeading: false,
                 actions: [],
                 flexibleSpace: FlexibleSpaceBar(
@@ -119,7 +119,7 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .primaryText,
                                         ),
                                   ),
                                 ),
@@ -128,14 +128,14 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
                                 onPressed: () async {
                                   context.pushNamed('login');
                                 },
-                                text: 'Registrate',
+                                text: 'Regístrate',
                                 options: FFButtonOptions(
                                   height: 40.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFF394BBE),
+                                  color: FlutterFlowTheme.of(context).tertiary,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -178,7 +178,7 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Que vas a ordenar hoy',
+                                '¿Qué vas a ordenar hoy?',
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ],
@@ -396,7 +396,7 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
                               24.0, 0.0, 24.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFFF27C82),
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Poppins',

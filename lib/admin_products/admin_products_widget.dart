@@ -62,7 +62,7 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(100.0),
           child: AppBar(
-            backgroundColor: Color(0xFFF27C82),
+            backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
             actions: [],
             flexibleSpace: FlexibleSpaceBar(
@@ -93,7 +93,8 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                   buttonSize: 50.0,
                                   icon: Icon(
                                     Icons.arrow_back,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 30.0,
                                   ),
                                   onPressed: () async {
@@ -113,7 +114,7 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                          .primaryText,
                                       fontSize: 18.0,
                                     ),
                               ),
@@ -278,7 +279,14 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                               listViewItemsRecord.name,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .headlineSmall,
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                      ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -377,7 +385,9 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                                             },
                                             child: FaIcon(
                                               FontAwesomeIcons.solidTrashAlt,
-                                              color: Color(0xFFFF0000),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               size: 40.0,
                                             ),
                                           ),

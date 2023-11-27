@@ -96,7 +96,7 @@ class _MenuWidgetState extends State<MenuWidget> {
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(116.0),
               child: AppBar(
-                backgroundColor: Color(0xFFF27C82),
+                backgroundColor: FlutterFlowTheme.of(context).primary,
                 automaticallyImplyLeading: false,
                 actions: [],
                 flexibleSpace: FlexibleSpaceBar(
@@ -125,7 +125,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .primaryText,
                                         ),
                                   ),
                                 ),
@@ -138,7 +138,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                                   buttonSize: 50.0,
                                   icon: Icon(
                                     Icons.shopping_cart,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 30.0,
                                   ),
                                   onPressed: () async {
@@ -156,7 +157,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                                     buttonSize: 50.0,
                                     icon: Icon(
                                       Icons.person,
-                                      color: Colors.white,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       size: 30.0,
                                     ),
                                     onPressed: () async {
@@ -177,7 +179,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                                       buttonSize: 50.0,
                                       icon: FaIcon(
                                         FontAwesomeIcons.ad,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
@@ -211,7 +214,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Qué vas a ordenar hoy?',
+                            '¿Qué vas a ordenar hoy?',
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -221,7 +224,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                       width: 359.0,
                       height: 130.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                         shape: BoxShape.rectangle,
                       ),
                       child: SingleChildScrollView(
@@ -246,18 +249,23 @@ class _MenuWidgetState extends State<MenuWidget> {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1685156328637-886a37f8cd34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8aWNvbiUyMGRyaW5rc3xlbnwwfHx8fDE2OTk4Mjk0NzZ8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.25,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.1,
-                                            fit: BoxFit.cover,
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 5.0, 0.0, 0.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              'https://images.unsplash.com/photo-1685156328637-886a37f8cd34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8aWNvbiUyMGRyaW5rc3xlbnwwfHx8fDE2OTk4Mjk0NzZ8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  0.25,
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.1,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -280,12 +288,15 @@ class _MenuWidgetState extends State<MenuWidget> {
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFFF27C82),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Poppins',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                             ),
                                         elevation: 3.0,
                                         borderSide: BorderSide(
@@ -317,18 +328,23 @@ class _MenuWidgetState extends State<MenuWidget> {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1532347231146-80afc9e3df2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxrb3JlYW4lMjBmb29kc3xlbnwwfHx8fDE2OTk4Mjk1MjZ8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.25,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.1,
-                                            fit: BoxFit.cover,
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 5.0, 0.0, 0.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              'https://images.unsplash.com/photo-1532347231146-80afc9e3df2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxrb3JlYW4lMjBmb29kc3xlbnwwfHx8fDE2OTk4Mjk1MjZ8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  0.25,
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.1,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -338,8 +354,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 5.0, 5.0, 5.0),
                                     child: FFButtonWidget(
-                                      onPressed: () {
-                                        print('btnkorean pressed ...');
+                                      onPressed: () async {
+                                        context.pushNamed('catKor');
                                       },
                                       text: 'Koreana',
                                       options: FFButtonOptions(
@@ -351,12 +367,15 @@ class _MenuWidgetState extends State<MenuWidget> {
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFFF27C82),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Poppins',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                             ),
                                         elevation: 3.0,
                                         borderSide: BorderSide(
@@ -388,18 +407,23 @@ class _MenuWidgetState extends State<MenuWidget> {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHxrb3JlYW4lMjB8ZW58MHx8fHwxNjk5ODI5NjI0fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.25,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.1,
-                                            fit: BoxFit.cover,
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 5.0, 0.0, 0.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHxrb3JlYW4lMjB8ZW58MHx8fHwxNjk5ODI5NjI0fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  0.25,
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.1,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -409,8 +433,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 5.0, 5.0, 5.0),
                                     child: FFButtonWidget(
-                                      onPressed: () {
-                                        print('btnjapanece pressed ...');
+                                      onPressed: () async {
+                                        context.pushNamed('catJap');
                                       },
                                       text: 'Japonesa',
                                       options: FFButtonOptions(
@@ -422,12 +446,15 @@ class _MenuWidgetState extends State<MenuWidget> {
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFFF27C82),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Poppins',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                             ),
                                         elevation: 3.0,
                                         borderSide: BorderSide(
@@ -567,7 +594,13 @@ class _MenuWidgetState extends State<MenuWidget> {
                                                     listViewItemsRecord.name,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .headlineSmall,
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                        ),
                                                   ),
                                                   Padding(
                                                     padding:
@@ -617,7 +650,14 @@ class _MenuWidgetState extends State<MenuWidget> {
                                                   textAlign: TextAlign.end,
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                      ),
                                                 ),
                                               ),
                                             ],
@@ -651,7 +691,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                                   24.0, 0.0, 24.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: Color(0xFF394BBE),
+                              color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(

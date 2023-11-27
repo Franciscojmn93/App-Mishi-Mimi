@@ -74,7 +74,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
         child: AppBar(
@@ -112,7 +112,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'Atras',
+                        'Atrás',
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
@@ -249,15 +249,14 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFF394BBE),
-                      textStyle: FlutterFlowTheme.of(context)
-                          .bodyMedium
-                          .override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.of(context).primaryBtnText,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.normal,
-                          ),
+                      color: FlutterFlowTheme.of(context).tertiary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.normal,
+                              ),
                       elevation: 1.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
@@ -313,7 +312,10 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
                   validator:
                       _model.txtNameControllerValidator.asValidator(context),
                 ),
@@ -327,7 +329,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                   focusNode: _model.txtDirectionFocusNode,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Tu direccion',
+                    labelText: 'Tu dirección',
                     labelStyle: FlutterFlowTheme.of(context).bodySmall,
                     hintText: 'Tu direccion',
                     hintStyle: FlutterFlowTheme.of(context).bodySmall,
@@ -364,7 +366,10 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
                   validator: _model.txtDirectionControllerValidator
                       .asValidator(context),
                 ),
@@ -414,7 +419,10 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                   contentPadding:
                       EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                 ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Poppins',
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                    ),
                 validator:
                     _model.txtEmailControllerValidator.asValidator(context),
               ),
@@ -464,7 +472,10 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
                   validator: _model.txtPhoneNumControllerValidator
                       .asValidator(context),
                 ),
@@ -491,10 +502,10 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFF87A8AF),
+                    color: FlutterFlowTheme.of(context).accent1,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Lexend Deca',
-                          color: Colors.white,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 16.0,
                           fontWeight: FontWeight.normal,
                         ),

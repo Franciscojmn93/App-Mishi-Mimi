@@ -49,7 +49,7 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFEFEFEF),
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -57,7 +57,7 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: 257.0,
             decoration: BoxDecoration(
-              color: Color(0xFFF27C82),
+              color: FlutterFlowTheme.of(context).primary,
             ),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
@@ -112,7 +112,7 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
+                                            .primaryText,
                                         fontSize: 20.0,
                                       ),
                                 ),
@@ -151,7 +151,8 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                                   .headlineSmall
                                   .override(
                                     fontFamily: 'Lexend Deca',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -166,7 +167,8 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Lexend Deca',
-                                    color: Color(0xB4FFFFFF),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -199,7 +201,7 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Poppins',
-                      color: Color(0xFF87A8AF),
+                      color: FlutterFlowTheme.of(context).accent1,
                     ),
                 elevation: 3.0,
                 borderSide: BorderSide(
@@ -219,7 +221,7 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                   'Opciones administrativas',
                   style: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
-                        color: Color(0xFF87A8AF),
+                        color: FlutterFlowTheme.of(context).accent1,
                       ),
                 ),
               ],
@@ -245,7 +247,7 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
-                          color: Color(0xFF87A8AF),
+                          color: FlutterFlowTheme.of(context).accent1,
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(
@@ -277,7 +279,7 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
-                          color: Color(0xFF87A8AF),
+                          color: FlutterFlowTheme.of(context).accent1,
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(
@@ -296,8 +298,8 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('btnAdminOrders pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('adminOrders');
                   },
                   text: 'Administrar ordenes',
                   options: FFButtonOptions(
@@ -309,7 +311,7 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
-                          color: Color(0xFF87A8AF),
+                          color: FlutterFlowTheme.of(context).accent1,
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(
