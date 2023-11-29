@@ -113,11 +113,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PerfilWidget(),
             ),
             FFRoute(
-              name: 'cart',
-              path: 'cart',
-              builder: (context, params) => CartWidget(),
-            ),
-            FFRoute(
               name: 'itemDetail',
               path: 'itemDetail',
               asyncParams: {
@@ -197,6 +192,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => EditOrderWidget(
                 editOrder: params.getParam('editOrder', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'cart',
+              path: 'cart',
+              builder: (context, params) => CartWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

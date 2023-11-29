@@ -293,41 +293,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign off',
     },
   },
-  // cart
-  {
-    'tzvzax08': {
-      'es': 'Productos en esta orden: ',
-      'en': 'Products in this order:',
-    },
-    'c3wqdmit': {
-      'es': 'Resumen del pedido',
-      'en': 'Order summary',
-    },
-    '8gmwxj9t': {
-      'es': 'Subtotal',
-      'en': 'Subtotal',
-    },
-    'jvuvxeuc': {
-      'es': 'IVA',
-      'en': 'IVA',
-    },
-    'shl64xqa': {
-      'es': 'Total',
-      'en': 'Total',
-    },
-    'za0fqjy5': {
-      'es': 'Confirmar orden',
-      'en': 'Confirm order',
-    },
-    'hl1hefo7': {
-      'es': 'Atrás',
-      'en': 'Back',
-    },
-    'stcguz9z': {
-      'es': 'Detalles de la orden',
-      'en': 'Order details',
-    },
-  },
   // itemDetail
   {
     'ukmpa464': {
@@ -582,6 +547,41 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '04ctb3aj': {
       'es': 'Editar Orden',
       'en': 'Edit Order',
+    },
+  },
+  // cart
+  {
+    't6rlktr8': {
+      'es': 'Productos en esta orden: ',
+      'en': 'Products in this order:',
+    },
+    '0lmwjrft': {
+      'es': 'Resumen del pedido',
+      'en': 'Order summary',
+    },
+    '9h7kerun': {
+      'es': 'Subtotal',
+      'en': 'Subtotal',
+    },
+    'syl4gx3g': {
+      'es': 'IVA',
+      'en': 'IVA',
+    },
+    'd6cgphbj': {
+      'es': 'Total',
+      'en': 'Total',
+    },
+    '5mial3rv': {
+      'es': 'Confirmar orden',
+      'en': 'Confirm order',
+    },
+    'cfqgoduj': {
+      'es': 'Atrás',
+      'en': 'Back',
+    },
+    'egscp337': {
+      'es': 'Detalles de la orden',
+      'en': 'Order details',
     },
   },
   // btCreateUser
