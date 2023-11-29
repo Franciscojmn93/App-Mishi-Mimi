@@ -107,7 +107,9 @@ class _AdminOrdersWidgetState extends State<AdminOrdersWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Administrar Órdenes',
+                                FFLocalizations.of(context).getText(
+                                  'ouprt0gr' /* Administrar ordenes */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(

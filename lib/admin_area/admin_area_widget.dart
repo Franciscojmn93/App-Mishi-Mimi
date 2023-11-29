@@ -106,7 +106,9 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Área de administración',
+                                  FFLocalizations.of(context).getText(
+                                    '8x5qjylt' /* Área de administración */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
                                       .override(
@@ -192,7 +194,9 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
 
                 context.goNamedAuth('menuNoRegisterUsers', context.mounted);
               },
-              text: 'Cerrar sesion',
+              text: FFLocalizations.of(context).getText(
+                'kix2zgno' /* Cerrar sesión */,
+              ),
               options: FFButtonOptions(
                 width: 160.0,
                 height: 50.0,
@@ -218,7 +222,9 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Opciones administrativas',
+                  FFLocalizations.of(context).getText(
+                    'y9s09svu' /* Opciones administrativas */,
+                  ),
                   style: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).accent1,
@@ -237,7 +243,9 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                   onPressed: () async {
                     context.pushNamed('AdminUsers');
                   },
-                  text: 'Administrar usuarios',
+                  text: FFLocalizations.of(context).getText(
+                    'a42cm5g8' /* Administrar usuarios */,
+                  ),
                   options: FFButtonOptions(
                     width: 160.0,
                     height: 50.0,
@@ -269,7 +277,9 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                   onPressed: () async {
                     context.pushNamed('AdminProducts');
                   },
-                  text: 'Administrar productos',
+                  text: FFLocalizations.of(context).getText(
+                    'pvcri5hl' /* Administrar productos */,
+                  ),
                   options: FFButtonOptions(
                     width: 160.0,
                     height: 50.0,
@@ -301,7 +311,9 @@ class _AdminAreaWidgetState extends State<AdminAreaWidget> {
                   onPressed: () async {
                     context.pushNamed('adminOrders');
                   },
-                  text: 'Administrar ordenes',
+                  text: FFLocalizations.of(context).getText(
+                    's084jrli' /* Administrar ordenes */,
+                  ),
                   options: FFButtonOptions(
                     width: 160.0,
                     height: 50.0,

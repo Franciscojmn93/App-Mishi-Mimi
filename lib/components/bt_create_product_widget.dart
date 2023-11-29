@@ -89,7 +89,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                   child: Text(
-                    'Agregar producto',
+                    FFLocalizations.of(context).getText(
+                      'utldio73' /* Agregar producto */,
+                    ),
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).accent1,
@@ -113,7 +115,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'nombre del producto',
+                              labelText: FFLocalizations.of(context).getText(
+                                '1qkw7g4y' /* Nombre */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -188,7 +192,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'descripción de producto',
+                              labelText: FFLocalizations.of(context).getText(
+                                'j6us5naw' /* Descripción */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -263,7 +269,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'precio de producto',
+                              labelText: FFLocalizations.of(context).getText(
+                                '5gfdi84l' /* Precio */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -379,7 +387,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                             }
                           }
                         },
-                        text: 'Subir imagen',
+                        text: FFLocalizations.of(context).getText(
+                          'ojz34r2r' /* Subir imagen */,
+                        ),
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -419,7 +429,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'En venta',
+                              FFLocalizations.of(context).getText(
+                                'afytkfsd' /* En venta */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -472,7 +484,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Bebida',
+                              FFLocalizations.of(context).getText(
+                                '6jdbrmut' /* Es Bebida */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -526,7 +540,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Comida Japonesa',
+                              FFLocalizations.of(context).getText(
+                                'rng7s98m' /* Es Comida Japonesa */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -579,7 +595,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Comida Koreana',
+                              FFLocalizations.of(context).getText(
+                                'p32me5th' /* Es Comida Koreana */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -632,7 +650,9 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Incluir como promoción',
+                              FFLocalizations.of(context).getText(
+                                '1niszn4y' /* Incluir como promoción */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -694,8 +714,26 @@ class _BtCreateProductWidgetState extends State<BtCreateProductWidget> {
                                 isJap: _model.swtJapValue,
                                 isKor: _model.swtKorValue,
                               ));
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('Completado'),
+                                content: Text('Adición del producto exitosa'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
                         },
-                        text: 'Agregar producto',
+                        text: FFLocalizations.of(context).getText(
+                          'mejmn0ef' /* Agregar producto */,
+                        ),
                         options: FFButtonOptions(
                           width: 270.0,
                           height: 50.0,

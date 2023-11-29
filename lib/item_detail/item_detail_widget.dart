@@ -134,7 +134,9 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               4.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Atrás',
+                            FFLocalizations.of(context).getText(
+                              'orduib25' /* Atrás */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
@@ -233,8 +235,16 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'DESCRIPCIÓN',
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                FFLocalizations.of(context).getText(
+                                  'ukmpa464' /* Descripción */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                               ),
                               Text(
                                 formatNumber(
@@ -301,7 +311,7 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                               count.toString(),
                               style: GoogleFonts.getFont(
                                 'Roboto',
-                                color: Colors.black,
+                                color: FlutterFlowTheme.of(context).accent2,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 16.0,
                               ),
@@ -372,7 +382,9 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
-                                  'subtotal',
+                                  FFLocalizations.of(context).getText(
+                                    'zy2dquvh' /* Sub total */,
+                                  ),
                                   style: FlutterFlowTheme.of(context).bodySmall,
                                 ),
                               ),

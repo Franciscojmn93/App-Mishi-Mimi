@@ -98,7 +98,9 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'Atrás',
+                        FFLocalizations.of(context).getText(
+                          'qn5lycmi' /* Atrás */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
@@ -113,7 +115,9 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Editar Usuario',
+                    FFLocalizations.of(context).getText(
+                      '2fwl9e5w' /* Editar Usuario */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -151,7 +155,9 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                 decoration: InputDecoration(
                   labelText: widget.userEdit?.displayName,
                   labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                  hintText: 'Tu nombre',
+                  hintText: FFLocalizations.of(context).getText(
+                    'lsyksuf9' /* El nombre */,
+                  ),
                   hintStyle: FlutterFlowTheme.of(context).bodySmall,
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
@@ -197,7 +203,9 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Hacer administrador',
+                    FFLocalizations.of(context).getText(
+                      'ejn695c0' /* Hacer administrador */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).accent1,
@@ -226,8 +234,26 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                         .update(createUsersRecordData(
                       isAdmin: _model.switchValue,
                     ));
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          title: Text('Completado'),
+                          content: Text('Edición del usuario exitosa'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: Text('Ok'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
-                  text: 'Guardar Cambios',
+                  text: FFLocalizations.of(context).getText(
+                    '29juqcgh' /* Guardar Cambios */,
+                  ),
                   options: FFButtonOptions(
                     width: 340.0,
                     height: 60.0,

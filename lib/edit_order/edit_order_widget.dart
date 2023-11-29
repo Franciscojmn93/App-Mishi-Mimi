@@ -95,7 +95,9 @@ class _EditOrderWidgetState extends State<EditOrderWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'Atrás',
+                        FFLocalizations.of(context).getText(
+                          '9r08wezn' /* Atrás */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
@@ -110,7 +112,9 @@ class _EditOrderWidgetState extends State<EditOrderWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Editar Usuario',
+                    FFLocalizations.of(context).getText(
+                      '04ctb3aj' /* Editar Orden */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -146,7 +150,9 @@ class _EditOrderWidgetState extends State<EditOrderWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Creador de la orden:',
+                    FFLocalizations.of(context).getText(
+                      'no7o9cw8' /* Creador de la orden: */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -172,7 +178,9 @@ class _EditOrderWidgetState extends State<EditOrderWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Orden Completada?',
+                    FFLocalizations.of(context).getText(
+                      'z54guby7' /* La orden está completada? */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).accent1,
@@ -202,7 +210,9 @@ class _EditOrderWidgetState extends State<EditOrderWidget> {
                       isActive: true,
                     ));
                   },
-                  text: 'Guardar Cambios',
+                  text: FFLocalizations.of(context).getText(
+                    'ubidn5lw' /* Guardar Cambios */,
+                  ),
                   options: FFButtonOptions(
                     width: 340.0,
                     height: 60.0,

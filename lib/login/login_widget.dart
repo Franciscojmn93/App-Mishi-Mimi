@@ -142,10 +142,14 @@ class _LoginWidgetState extends State<LoginWidget>
                         indicatorColor: FlutterFlowTheme.of(context).alternate,
                         tabs: [
                           Tab(
-                            text: 'Ingresar',
+                            text: FFLocalizations.of(context).getText(
+                              '6dk5ojb7' /* Ingresar */,
+                            ),
                           ),
                           Tab(
-                            text: 'Nueva Cuenta',
+                            text: FFLocalizations.of(context).getText(
+                              'kwl9rq9b' /* Nueva Cuenta */,
+                            ),
                           ),
                         ],
                         controller: _model.tabBarController,
@@ -169,10 +173,16 @@ class _LoginWidgetState extends State<LoginWidget>
                                     focusNode: _model.txtEmailFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Correo electrónico',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'ry32psp6' /* Correo electrónico */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodySmall,
-                                      hintText: 'Ingresa un email',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '5e3kfvki' /* Ingresa un email */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodySmall,
                                       enabledBorder: OutlineInputBorder(
@@ -235,10 +245,16 @@ class _LoginWidgetState extends State<LoginWidget>
                                     focusNode: _model.txtPasswordFocusNode,
                                     obscureText: !_model.txtPasswordVisibility,
                                     decoration: InputDecoration(
-                                      labelText: 'Contraseña',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'okejy5lg' /* Contraseña */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodySmall,
-                                      hintText: 'Ingresa una contraseña',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '1zeq44ve' /* Ingresa una contraseña */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodySmall,
                                       enabledBorder: OutlineInputBorder(
@@ -329,7 +345,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                       context.goNamedAuth(
                                           'menu', context.mounted);
                                     },
-                                    text: 'Entrar',
+                                    text: FFLocalizations.of(context).getText(
+                                      '6lh8my5j' /* Entrar */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: 230.0,
                                       height: 50.0,
@@ -377,10 +395,16 @@ class _LoginWidgetState extends State<LoginWidget>
                                       focusNode: _model.txtEmailCreateFocusNode,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'correo electrónico',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'dhhdd4lr' /* Correo electrónico */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
-                                        hintText: 'Ingresa un correo',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'f3u6a5un' /* Ingresa un correo */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
                                         enabledBorder: OutlineInputBorder(
@@ -446,10 +470,16 @@ class _LoginWidgetState extends State<LoginWidget>
                                       obscureText:
                                           !_model.txtPasswordCreateVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'contraseña',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'lmvqo8mw' /* Contraseña */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
-                                        hintText: 'Ingresa una contraseña',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'n0a3kzpu' /* Ingresa una contraseña */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
                                         enabledBorder: OutlineInputBorder(
@@ -544,7 +574,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                         context.goNamedAuth(
                                             'menu', context.mounted);
                                       },
-                                      text: 'Crea una cuenta',
+                                      text: FFLocalizations.of(context).getText(
+                                        'rhwtro84' /* Crea una cuenta */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 230.0,
                                         height: 50.0,

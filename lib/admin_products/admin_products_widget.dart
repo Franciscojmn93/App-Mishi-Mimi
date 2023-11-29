@@ -108,7 +108,9 @@ class _AdminProductsWidgetState extends State<AdminProductsWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Administrar Productos',
+                                FFLocalizations.of(context).getText(
+                                  '7p08fzrr' /* Administrar Productos */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(

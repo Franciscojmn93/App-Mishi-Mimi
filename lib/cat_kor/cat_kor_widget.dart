@@ -137,7 +137,9 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Mishi Mimi',
+                                    FFLocalizations.of(context).getText(
+                                      '1358mll9' /* Mishi Mimi */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
@@ -209,7 +211,9 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            '¿Qué comida koreana vas a ordenar hoy?',
+                            FFLocalizations.of(context).getText(
+                              'p5nfjnw3' /* ¿Qué comida koreana vas a orde... */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -410,10 +414,13 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              await launchURL(
+                                  'https://www.ubereats.com/cr/store/burga-rohrmoser/PjwVK0HXTNaP23UE2Tj4Zw?diningMode=DELIVERY');
                             },
-                            text: 'Ordenar en Uber Eats',
+                            text: FFLocalizations.of(context).getText(
+                              '5vemsgvc' /* Ordenar en Uber Eats */,
+                            ),
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -425,8 +432,7 @@ class _CatKorWidgetState extends State<CatKorWidget> {
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: Colors.white,
                                   ),
                               elevation: 3.0,
                               borderSide: BorderSide(

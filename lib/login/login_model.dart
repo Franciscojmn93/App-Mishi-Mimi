@@ -35,7 +35,9 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   String? _txtEmailCreateControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Este campo es requerido';
+      return FFLocalizations.of(context).getText(
+        'x5u5hty4' /* Este campo es requerido */,
+      );
     }
 
     return null;
@@ -49,14 +51,20 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   String? _txtPasswordCreateControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Este campo es requrido';
+      return FFLocalizations.of(context).getText(
+        'wusdksen' /* Este campo es requrido */,
+      );
     }
 
     if (val.length < 6) {
-      return 'la contraseña debe tener minimo 6 números';
+      return FFLocalizations.of(context).getText(
+        'yx00fizf' /* La contraseña debe tener minim... */,
+      );
     }
     if (val.length > 12) {
-      return 'la contraseña debe tener maximo 12 números';
+      return FFLocalizations.of(context).getText(
+        '7w3rpdaf' /* La contraseña debe tener maxim... */,
+      );
     }
 
     return null;
