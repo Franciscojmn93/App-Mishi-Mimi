@@ -137,7 +137,9 @@ class _CatJapWidgetState extends State<CatJapWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Mishi Mimi',
+                                    FFLocalizations.of(context).getText(
+                                      'erltyrzo' /* Mishi Mimi */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
@@ -209,7 +211,9 @@ class _CatJapWidgetState extends State<CatJapWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            '¿Qué comida japonesa vas a ordenar hoy?',
+                            FFLocalizations.of(context).getText(
+                              'zcuk61ju' /* ¿Qué comida japonesa vas a ord... */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -410,10 +414,13 @@ class _CatJapWidgetState extends State<CatJapWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              await launchURL(
+                                  'https://www.ubereats.com/cr/store/burga-rohrmoser/PjwVK0HXTNaP23UE2Tj4Zw?diningMode=DELIVERY');
                             },
-                            text: 'Ordenar en Uber Eats',
+                            text: FFLocalizations.of(context).getText(
+                              'usr205oz' /* Ordenar en Uber Eats */,
+                            ),
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -425,8 +432,7 @@ class _CatJapWidgetState extends State<CatJapWidget> {
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: Colors.white,
                                   ),
                               elevation: 3.0,
                               borderSide: BorderSide(

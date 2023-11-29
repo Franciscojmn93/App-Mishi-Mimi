@@ -169,7 +169,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Cambiar a modo oscuro o claro',
+                  FFLocalizations.of(context).getText(
+                    '4adxgme7' /* Cambiar a modo oscuro o claro */,
+                  ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).accent1,
@@ -225,7 +227,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Editar Perfil',
+                            FFLocalizations.of(context).getText(
+                              'www7h1cg' /* Editar Perfil */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -272,7 +276,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
 
                 context.goNamedAuth('menuNoRegisterUsers', context.mounted);
               },
-              text: 'Cerrar sesión',
+              text: FFLocalizations.of(context).getText(
+                'lfvy7isy' /* Cerrar sesión */,
+              ),
               options: FFButtonOptions(
                 width: 160.0,
                 height: 50.0,

@@ -112,7 +112,9 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'Atrás',
+                        FFLocalizations.of(context).getText(
+                          '8782pyxl' /* Atrás */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
@@ -127,7 +129,9 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Editar perfil',
+                    FFLocalizations.of(context).getText(
+                      'r96alemr' /* Editar perfil */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Poppins',
                           color: Colors.white,
@@ -240,8 +244,14 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                           return;
                         }
                       }
+
+                      await widget.idUser!.update(createUsersRecordData(
+                        photoUrl: _model.uploadedFileUrl,
+                      ));
                     },
-                    text: 'Cambiar foto',
+                    text: FFLocalizations.of(context).getText(
+                      'xa5jmb2j' /* Cambiar foto */,
+                    ),
                     options: FFButtonOptions(
                       width: 130.0,
                       height: 40.0,
@@ -275,9 +285,13 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                   focusNode: _model.txtNameFocusNode,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Tu nombre',
+                    labelText: FFLocalizations.of(context).getText(
+                      'yiv0he53' /* Tu nombre */,
+                    ),
                     labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                    hintText: 'Tu nombre',
+                    hintText: FFLocalizations.of(context).getText(
+                      'qze3orn9' /* Tu nombre */,
+                    ),
                     hintStyle: FlutterFlowTheme.of(context).bodySmall,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -329,9 +343,13 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                   focusNode: _model.txtDirectionFocusNode,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Tu dirección',
+                    labelText: FFLocalizations.of(context).getText(
+                      '9gdf67bu' /* Tu dirección */,
+                    ),
                     labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                    hintText: 'Tu direccion',
+                    hintText: FFLocalizations.of(context).getText(
+                      'tl1e35eo' /* Tu dirección */,
+                    ),
                     hintStyle: FlutterFlowTheme.of(context).bodySmall,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -382,9 +400,13 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                 focusNode: _model.txtEmailFocusNode,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Tu email',
+                  labelText: FFLocalizations.of(context).getText(
+                    'qzotdjhi' /* Tu email */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                  hintText: 'Tu direccion',
+                  hintText: FFLocalizations.of(context).getText(
+                    'lj5e587x' /* Tu dirección */,
+                  ),
                   hintStyle: FlutterFlowTheme.of(context).bodySmall,
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
@@ -435,9 +457,13 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                   focusNode: _model.txtPhoneNumFocusNode,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Tu número de teléfono',
+                    labelText: FFLocalizations.of(context).getText(
+                      'ivg0xe9s' /* Tu número de teléfono */,
+                    ),
                     labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                    hintText: 'Tu direccion',
+                    hintText: FFLocalizations.of(context).getText(
+                      'bc2w4bic' /* Tu dirección */,
+                    ),
                     hintStyle: FlutterFlowTheme.of(context).bodySmall,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -492,10 +518,27 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                       displayName: _model.txtNameController.text,
                       phoneNumber: _model.txtPhoneNumController.text,
                       direction: _model.txtDirectionController.text,
-                      photoUrl: _model.uploadedFileUrl,
                     ));
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          title: Text('Completado'),
+                          content: Text('Edición de perfil exitosa'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: Text('Ok'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
-                  text: 'Guardar Cambios',
+                  text: FFLocalizations.of(context).getText(
+                    'i9q7b9uv' /* Guardar Cambios */,
+                  ),
                   options: FFButtonOptions(
                     width: 340.0,
                     height: 60.0,

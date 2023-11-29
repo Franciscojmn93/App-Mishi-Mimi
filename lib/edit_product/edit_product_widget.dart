@@ -114,7 +114,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'Atrás',
+                        FFLocalizations.of(context).getText(
+                          'cfylmuaq' /* Atrás */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
@@ -129,7 +131,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Editar producto',
+                    FFLocalizations.of(context).getText(
+                      'dmgm8nma' /* Editar producto */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -163,7 +167,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                     labelText: widget.editProduct?.name,
                     labelStyle: FlutterFlowTheme.of(context).bodySmall,
                     alignLabelWithHint: false,
-                    hintText: 'Nombre de producto',
+                    hintText: FFLocalizations.of(context).getText(
+                      'ra0m4lu8' /* Nombre del producto */,
+                    ),
                     hintStyle: FlutterFlowTheme.of(context).bodySmall,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -215,7 +221,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                   decoration: InputDecoration(
                     labelText: widget.editProduct?.description,
                     labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                    hintText: 'Descripcion de producto',
+                    hintText: FFLocalizations.of(context).getText(
+                      'wln3hph3' /* Descripcion del producto */,
+                    ),
                     hintStyle: FlutterFlowTheme.of(context).bodySmall,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -267,7 +275,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                   decoration: InputDecoration(
                     labelText: widget.editProduct?.price?.toString(),
                     labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                    hintText: 'Precio de producto',
+                    hintText: FFLocalizations.of(context).getText(
+                      'nvwhwkuw' /* Precio del producto */,
+                    ),
                     hintStyle: FlutterFlowTheme.of(context).bodySmall,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -317,7 +327,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      'En venta',
+                      FFLocalizations.of(context).getText(
+                        'nz50vtus' /* En venta */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.of(context).accent1,
@@ -353,7 +365,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Incluir como promoción',
+                          FFLocalizations.of(context).getText(
+                            'lghke4tj' /* Incluir como promoción */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -384,7 +398,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Es bebida',
+                          FFLocalizations.of(context).getText(
+                            '7b7w9hqu' /* Es bebida */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -396,7 +412,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                               100.0, 0.0, 0.0, 0.0),
                           child: Switch.adaptive(
                             value: _model.swtDrinkValue ??=
-                                widget.editProduct!.isPromo,
+                                widget.editProduct!.isDrink,
                             onChanged: (newValue) async {
                               setState(() => _model.swtDrinkValue = newValue!);
                             },
@@ -419,7 +435,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Es comida Japonesa',
+                          FFLocalizations.of(context).getText(
+                            '0kjhwfpx' /* Es comida Japonesa */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -431,7 +449,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                               20.0, 0.0, 0.0, 0.0),
                           child: Switch.adaptive(
                             value: _model.swtJapValue ??=
-                                widget.editProduct!.isPromo,
+                                widget.editProduct!.isJap,
                             onChanged: (newValue) async {
                               setState(() => _model.swtJapValue = newValue!);
                             },
@@ -455,7 +473,9 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Es comida Koreana',
+                          FFLocalizations.of(context).getText(
+                            '3slgrojo' /* Es comida Koreana */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -467,7 +487,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                               25.0, 0.0, 0.0, 0.0),
                           child: Switch.adaptive(
                             value: _model.swtKorValue ??=
-                                widget.editProduct!.isPromo,
+                                widget.editProduct!.isKor,
                             onChanged: (newValue) async {
                               setState(() => _model.swtKorValue = newValue!);
                             },
@@ -541,8 +561,15 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                             return;
                           }
                         }
+
+                        await widget.editProduct!.reference
+                            .update(createItemsRecordData(
+                          image: _model.uploadedFileUrl,
+                        ));
                       },
-                      text: 'Cambiar imagen',
+                      text: FFLocalizations.of(context).getText(
+                        'mfytdd4s' /* Cambiar imagen */,
+                      ),
                       options: FFButtonOptions(
                         height: 40.0,
                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -579,14 +606,31 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                         description: _model.txtDescriptionController.text,
                         price: widget.editProduct?.price,
                         onSale: _model.switchValue1,
-                        image: _model.uploadedFileUrl,
                         isPromo: _model.switchValue2,
                         isDrink: _model.swtDrinkValue,
                         isJap: _model.swtJapValue,
                         isKor: _model.swtKorValue,
                       ));
+                      await showDialog(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('Completado'),
+                            content: Text('Edición del producto exitosa'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: Text('Ok'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
                     },
-                    text: 'Guardar Cambios',
+                    text: FFLocalizations.of(context).getText(
+                      'w0tawrix' /* Guardar Cambios */,
+                    ),
                     options: FFButtonOptions(
                       width: 340.0,
                       height: 60.0,

@@ -108,7 +108,9 @@ class _AdminUsersWidgetState extends State<AdminUsersWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Administrar Usuarios',
+                                FFLocalizations.of(context).getText(
+                                  'avz2rgxs' /* Administrar Usuarios */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
@@ -331,7 +333,10 @@ class _AdminUsersWidgetState extends State<AdminUsersWidget> {
                                                     .fromSTEB(
                                                         0.0, 4.0, 8.0, 0.0),
                                                 child: AutoSizeText(
-                                                  'Aministrador',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '66g4dbtd' /* Aministrador */,
+                                                  ),
                                                   textAlign: TextAlign.start,
                                                   maxLines: 2,
                                                   style: FlutterFlowTheme.of(

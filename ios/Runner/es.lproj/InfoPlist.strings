@@ -1,0 +1,3 @@
+NSCameraUsageDescription = "Mishi-Mimi desea acceder a la cámara";
+NSPhotoLibraryUsageDescription = "Mishi-Mimi desea acceder a tu galería";
+NSLocationWhenInUseUsageDescription = "Mishi-Mimi desea saber tu ubicación";

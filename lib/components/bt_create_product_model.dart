@@ -22,7 +22,9 @@ class BtCreateProductModel extends FlutterFlowModel<BtCreateProductWidget> {
   String? Function(BuildContext, String?)? txtNameControllerValidator;
   String? _txtNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Este campo es requerido';
+      return FFLocalizations.of(context).getText(
+        '6z6kvltt' /* Este campo es requerido */,
+      );
     }
 
     return null;
@@ -35,7 +37,9 @@ class BtCreateProductModel extends FlutterFlowModel<BtCreateProductWidget> {
   String? _txtdescriptionControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Este campo es requerido';
+      return FFLocalizations.of(context).getText(
+        '6914nd7f' /* Este campo es requerido */,
+      );
     }
 
     return null;
@@ -47,7 +51,9 @@ class BtCreateProductModel extends FlutterFlowModel<BtCreateProductWidget> {
   String? Function(BuildContext, String?)? txtPriceControllerValidator;
   String? _txtPriceControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Este campo es requerido';
+      return FFLocalizations.of(context).getText(
+        '7o9159va' /* Este campo es requerido */,
+      );
     }
 
     return null;

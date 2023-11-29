@@ -113,7 +113,9 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Mishi Mimi',
+                                    FFLocalizations.of(context).getText(
+                                      'mvrcz9ig' /* Mishi Mimi */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
@@ -128,7 +130,9 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
                                 onPressed: () async {
                                   context.pushNamed('login');
                                 },
-                                text: 'Regístrate',
+                                text: FFLocalizations.of(context).getText(
+                                  'r5zxbkub' /* Regístrate */,
+                                ),
                                 options: FFButtonOptions(
                                   height: 40.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -178,7 +182,9 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                '¿Qué vas a ordenar hoy?',
+                                FFLocalizations.of(context).getText(
+                                  'w6dti4rf' /* ¿Qué vas a ordenar hoy? */,
+                                ),
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ],
@@ -386,10 +392,13 @@ class _MenuNoRegisterUsersWidgetState extends State<MenuNoRegisterUsersWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await launchURL(
+                              'https://www.ubereats.com/cr/store/burga-rohrmoser/PjwVK0HXTNaP23UE2Tj4Zw?diningMode=DELIVERY');
                         },
-                        text: 'Ordenar en UBER Eats',
+                        text: FFLocalizations.of(context).getText(
+                          'skecpiyp' /* Ordenar en Uber Eats */,
+                        ),
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: EdgeInsetsDirectional.fromSTEB(

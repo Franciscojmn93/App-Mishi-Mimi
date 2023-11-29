@@ -138,7 +138,9 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Mishi Mimi',
+                                    FFLocalizations.of(context).getText(
+                                      'uzwj0ym1' /* Mishi Mimi */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
@@ -210,7 +212,9 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            '¿Qué bebida vas a ordenar hoy?',
+                            FFLocalizations.of(context).getText(
+                              'zeel97s2' /* ¿Qué bebida vas a ordenar hoy? */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -418,10 +422,13 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              await launchURL(
+                                  'https://www.ubereats.com/cr/store/burga-rohrmoser/PjwVK0HXTNaP23UE2Tj4Zw?diningMode=DELIVERY');
                             },
-                            text: 'Ordenar en Uber Eats',
+                            text: FFLocalizations.of(context).getText(
+                              'rp1bjnio' /* Ordenar en Uber Eats */,
+                            ),
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -433,8 +440,7 @@ class _CatDrinkWidgetState extends State<CatDrinkWidget> {
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: Colors.white,
                                   ),
                               elevation: 3.0,
                               borderSide: BorderSide(

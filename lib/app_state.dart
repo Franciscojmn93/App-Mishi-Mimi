@@ -28,6 +28,12 @@ class FFAppState extends ChangeNotifier {
   set orderCreatorName(String _value) {
     _orderCreatorName = _value;
   }
+
+  String _productImage = '';
+  String get productImage => _productImage;
+  set productImage(String _value) {
+    _productImage = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

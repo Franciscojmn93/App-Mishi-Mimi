@@ -92,7 +92,9 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                   child: Text(
-                    'Crear usuario',
+                    FFLocalizations.of(context).getText(
+                      'iau6ckm5' /* Crear usuario */,
+                    ),
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -116,7 +118,9 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'correo',
+                              labelText: FFLocalizations.of(context).getText(
+                                'qzle83o5' /* Correo Electrónico */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -191,7 +195,9 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'nombre',
+                              labelText: FFLocalizations.of(context).getText(
+                                'x3p7bvq2' /* Nombre */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -266,7 +272,9 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'contraseña',
+                              labelText: FFLocalizations.of(context).getText(
+                                'zruozihk' /* Contraseña */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -341,7 +349,9 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'direccion',
+                              labelText: FFLocalizations.of(context).getText(
+                                'vnbo323u' /* Dirección */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -416,7 +426,9 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'número telefónico',
+                              labelText: FFLocalizations.of(context).getText(
+                                'oqpvqlqa' /* Número telefónico */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -504,7 +516,7 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             builder: (alertDialogContext) {
                               return AlertDialog(
                                 title: Text('Usuario agregado '),
-                                content: Text('Usuario  agregado con exito!'),
+                                content: Text('Usuario agregado con exito!'),
                                 actions: [
                                   TextButton(
                                     onPressed: () =>
@@ -516,7 +528,9 @@ class _BtCreateUserWidgetState extends State<BtCreateUserWidget> {
                             },
                           );
                         },
-                        text: 'Agregar usuario',
+                        text: FFLocalizations.of(context).getText(
+                          'i1agd51a' /* Agregar usuario */,
+                        ),
                         options: FFButtonOptions(
                           width: 270.0,
                           height: 50.0,

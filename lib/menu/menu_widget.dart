@@ -119,7 +119,9 @@ class _MenuWidgetState extends State<MenuWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Mishi Mimi',
+                                    FFLocalizations.of(context).getText(
+                                      'hegl1lpr' /* Mishi Mimi */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
@@ -214,7 +216,9 @@ class _MenuWidgetState extends State<MenuWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            '¿Qué vas a ordenar hoy?',
+                            FFLocalizations.of(context).getText(
+                              'bt628trt' /* ¿Qué vas a ordenar hoy? */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -278,7 +282,9 @@ class _MenuWidgetState extends State<MenuWidget> {
                                       onPressed: () async {
                                         context.pushNamed('catDrink');
                                       },
-                                      text: 'Bebidas',
+                                      text: FFLocalizations.of(context).getText(
+                                        'ze0e9616' /* Bebidas */,
+                                      ),
                                       options: FFButtonOptions(
                                         height:
                                             MediaQuery.sizeOf(context).height *
@@ -357,7 +363,9 @@ class _MenuWidgetState extends State<MenuWidget> {
                                       onPressed: () async {
                                         context.pushNamed('catKor');
                                       },
-                                      text: 'Koreana',
+                                      text: FFLocalizations.of(context).getText(
+                                        'fny0ce3t' /* Koreana */,
+                                      ),
                                       options: FFButtonOptions(
                                         height:
                                             MediaQuery.sizeOf(context).height *
@@ -436,7 +444,9 @@ class _MenuWidgetState extends State<MenuWidget> {
                                       onPressed: () async {
                                         context.pushNamed('catJap');
                                       },
-                                      text: 'Japonesa',
+                                      text: FFLocalizations.of(context).getText(
+                                        '6p26vkb9' /* Japonesa */,
+                                      ),
                                       options: FFButtonOptions(
                                         height:
                                             MediaQuery.sizeOf(context).height *
@@ -480,7 +490,9 @@ class _MenuWidgetState extends State<MenuWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Promociones para ti',
+                            FFLocalizations.of(context).getText(
+                              'd7d6x9xl' /* Promociones para ti */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -681,10 +693,13 @@ class _MenuWidgetState extends State<MenuWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              await launchURL(
+                                  'https://www.ubereats.com/cr/store/burga-rohrmoser/PjwVK0HXTNaP23UE2Tj4Zw?diningMode=DELIVERY');
                             },
-                            text: 'Ordenar en Uber Eats',
+                            text: FFLocalizations.of(context).getText(
+                              'ngot4w22' /* Ordenar en Uber Eats */,
+                            ),
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
