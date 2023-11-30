@@ -191,6 +191,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                       final selectedMedia =
                           await selectMediaWithSourceBottomSheet(
                         context: context,
+                        imageQuality: 100,
                         allowPhoto: true,
                       );
                       if (selectedMedia != null &&

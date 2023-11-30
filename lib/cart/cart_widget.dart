@@ -627,7 +627,7 @@ class _CartWidgetState extends State<CartWidget> {
                             offset: Offset(0.0, -2.0),
                           )
                         ],
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       ),
                       child: FFButtonWidget(
                         onPressed: () {
